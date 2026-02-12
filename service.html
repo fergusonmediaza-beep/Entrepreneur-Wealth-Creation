@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrepreneur Wealth Creation | Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
+
+    :root {
+      --green: #7E9B75;
+      --gold: #D6A24A;
+      --brown: #9C5B2E;
+      --cream: #F6F1E9;
+      --dark: #2F2F2F;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 55px;
+    }
+
+    nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+/* Hover underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Active page highlight */
+nav a.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+
+    /* HERO */
+    .page-hero {
+      background: linear-gradient(rgba(47,47,47,.75), rgba(47,47,47,.75)),
+                  url("services.png") center/cover no-repeat;
+      color: #fff;
+      padding: 120px 8%;
+    }
+
+    .page-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 46px;
+      max-width: 700px;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    /* INTRO */
+    .intro {
+      max-width: 800px;
+      margin-bottom: 80px;
+    }
+
+    .intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34px;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    /* SERVICE BLOCK */
+    .service {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .service:nth-child(even) {
+      direction: rtl;
+    }
+
+    .service:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .service img {
+      width: 100%;
+      border-radius: 22px;
+    }
+
+    .service h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      color: var(--green);
+      margin-bottom: 15px;
+    }
+
+    .service ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    .service ul li {
+      margin-bottom: 10px;
+    }
+
+    /* FEATURE CARDS */
+    .features {
+      background: var(--white);
+      border-radius: 30px;
+      padding: 70px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+    }
+
+    .features h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34px;
+      color: var(--brown);
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+    }
+
+    .feature {
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 65px;
+      height: 65px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 20px;
+    }
+
+    .feature h4 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .service {
+        grid-template-columns: 1fr;
+      }
+      .service:nth-child(even) {
+        direction: ltr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="EWC Logo">
+  <nav>
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="service.html" class="nav-link">Services</a>
+  <a href="programme.html" class="nav-link">Programs</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</nav>
+
+</header>
+
+<section class="page-hero">
+  <h1>Strategic Services Designed to Build Sustainable Wealth</h1>
+</section>
+
+<section>
+  <div class="intro">
+    <h2>What We Offer</h2>
+    <p>
+      Our services are built around real entrepreneurial challenges. We focus on
+      clarity, structure, and execution — helping entrepreneurs make informed
+      decisions that lead to long-term financial success.
+    </p>
+  </div>
+
+  <div class="service">
+    <div>
+      <h3>Business Coaching & Strategy</h3>
+      <p>
+        One-on-one and group coaching designed to help entrepreneurs strengthen
+        decision-making, improve operations, and grow with confidence.
+      </p>
+      <ul>
+        <li>Business planning & goal setting</li>
+        <li>Growth and scaling strategies</li>
+        <li>Accountability coaching</li>
+      </ul>
+    </div>
+    <img src="service1.png" alt="Business coaching">
+  </div>
+
+  <div class="service">
+    <div>
+      <h3>Financial Literacy & Money Management</h3>
+      <p>
+        Practical financial education focused on budgeting, cash flow, saving,
+        and investment fundamentals for entrepreneurs.
+      </p>
+      <ul>
+        <li>Personal & business budgeting</li>
+        <li>Cash flow management</li>
+        <li>Financial goal planning</li>
+      </ul>
+    </div>
+    <img src="service2.png" alt="Financial education">
+  </div>
+
+  <div class="service">
+    <div>
+      <h3>Wealth Creation Programs</h3>
+      <p>
+        Structured programs that guide entrepreneurs through building,
+        protecting, and growing wealth over time.
+      </p>
+      <ul>
+        <li>Wealth mindset development</li>
+        <li>Long-term financial planning</li>
+        <li>Investment readiness</li>
+      </ul>
+    </div>
+    <img src="service3.png" alt="Wealth creation">
+  </div>
+</section>
+
+<section class="features">
+  <h2>Why Our Approach Works</h2>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="feature-icon">✔</div>
+      <h4>Practical Solutions</h4>
+      <p>Real strategies you can apply immediately.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📈</div>
+      <h4>Growth Focused</h4>
+      <p>Built for sustainability, not shortcuts.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🤝</div>
+      <h4>Entrepreneur Centric</h4>
+      <p>Designed around real entrepreneurial challenges.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Entrepreneur Wealth Creation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

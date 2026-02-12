@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrepreneur Wealth Creation | Programs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
+
+    :root {
+      --green: #7E9B75;
+      --gold: #D6A24A;
+      --brown: #9C5B2E;
+      --cream: #F6F1E9;
+      --dark: #2F2F2F;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 55px;
+    }
+
+   nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+/* Hover underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Active page highlight */
+nav a.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+
+    /* 🔥 Animated Hero */
+    .page-hero {
+      background: linear-gradient(-45deg, #7E9B75, #D6A24A, #9C5B2E, #2F2F2F);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #fff;
+      padding: 140px 8%;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .page-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 46px;
+      max-width: 700px;
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin-bottom: 70px;
+    }
+
+    .intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34px;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    /* Program Cards */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .program-card {
+      background: var(--white);
+      padding: 45px 35px;
+      border-radius: 25px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      transition: 0.4s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .program-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--green);
+    }
+
+    .program-card ul {
+      margin: 20px 0;
+      padding-left: 18px;
+    }
+
+    .program-card ul li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--green);
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+    }
+
+    /* Detailed Sections */
+    .details {
+      background: var(--white);
+      margin-bottom: 60px;
+      padding: 60px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    }
+
+    .details h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .details h4 {
+      margin-top: 20px;
+      color: var(--green);
+    }
+
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="EWC Logo">
+ <nav>
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="service.html" class="nav-link">Services</a>
+  <a href="programme.html" class="nav-link">Programs</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</nav>
+
+</header>
+
+<section class="page-hero">
+  <h1>Structured Programs Designed for Real Entrepreneurial Growth</h1>
+</section>
+
+<section>
+  <div class="intro">
+    <h2>Our Signature Programs</h2>
+    <p>Select a program below to see full details.</p>
+  </div>
+
+  <div class="programs-grid">
+
+    <div class="program-card">
+      <h3>Entrepreneur Foundation Program</h3>
+      <ul>
+        <li>Business fundamentals</li>
+        <li>Financial basics</li>
+        <li>Growth planning</li>
+      </ul>
+      <a href="#foundation" class="btn">Learn More</a>
+    </div>
+
+    <div class="program-card">
+      <h3>Wealth Builder Accelerator</h3>
+      <ul>
+        <li>Advanced strategy</li>
+        <li>Wealth planning</li>
+        <li>Investment readiness</li>
+      </ul>
+      <a href="#accelerator" class="btn">Learn More</a>
+    </div>
+
+    <div class="program-card">
+      <h3>Executive Coaching</h3>
+      <ul>
+        <li>1-on-1 support</li>
+        <li>Strategic scaling</li>
+        <li>Performance accountability</li>
+      </ul>
+      <a href="#executive" class="btn">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Detailed Sections -->
+
+<section id="foundation" class="details">
+  <h2>Entrepreneur Foundation Program</h2>
+  <p>This program is designed for early-stage entrepreneurs who need structure, clarity, and direction.</p>
+
+  <h4>Who It’s For:</h4>
+  <p>Startups and small business owners seeking a strong foundation.</p>
+
+  <h4>What You’ll Gain:</h4>
+  <ul>
+    <li>Business model clarity</li>
+    <li>Financial management basics</li>
+    <li>Action-based growth plan</li>
+  </ul>
+</section>
+
+<section id="accelerator" class="details">
+  <h2>Wealth Builder Accelerator</h2>
+  <p>A strategic program for entrepreneurs ready to grow revenue and build long-term wealth.</p>
+
+  <h4>Who It’s For:</h4>
+  <p>Established entrepreneurs looking to scale.</p>
+
+  <h4>What You’ll Gain:</h4>
+  <ul>
+    <li>Advanced growth strategies</li>
+    <li>Wealth-building framework</li>
+    <li>Investment preparation guidance</li>
+  </ul>
+</section>
+
+<section id="executive" class="details">
+  <h2>Executive Coaching</h2>
+  <p>High-level strategic support for ambitious entrepreneurs.</p>
+
+  <h4>Who It’s For:</h4>
+  <p>Business leaders ready for expansion and leadership refinement.</p>
+
+  <h4>What You’ll Gain:</h4>
+  <ul>
+    <li>Personalized coaching</li>
+    <li>Strategic decision-making clarity</li>
+    <li>Performance accountability system</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2026 Entrepreneur Wealth Creation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

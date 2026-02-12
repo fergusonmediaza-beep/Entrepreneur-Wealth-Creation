@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Entrepreneur Wealth Creation | Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --green: #7E9B75;
+  --gold: #D6A24A;
+  --brown: #9C5B2E;
+  --cream: #F6F1E9;
+  --dark: #2F2F2F;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* Header */
+header {
+  background: var(--white);
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 55px;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+/* Hover underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Active page highlight */
+nav a.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+/* 🔥 Animated Hero */
+.page-hero {
+  background: linear-gradient(-45deg, #7E9B75, #D6A24A, #9C5B2E, #2F2F2F);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #fff;
+  padding: 130px 8%;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.page-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 46px;
+  max-width: 700px;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+/* Glass Card Effect */
+.contact-form, .contact-info {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  padding: 60px;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+/* Form Styling */
+.contact-form h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 30px;
+  color: var(--brown);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-family: 'Inter', sans-serif;
+  transition: 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(126,155,117,0.2);
+}
+
+button {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: var(--gold);
+}
+
+/* Contact Info */
+.contact-info h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 30px;
+  color: var(--brown);
+}
+
+.info-item {
+  margin-bottom: 25px;
+}
+
+.info-item h4 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 8px;
+  color: var(--green);
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="EWC Logo">
+  <nav>
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="service.html" class="nav-link">Services</a>
+  <a href="programme.html" class="nav-link">Programs</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</nav>
+
+</header>
+
+<section class="page-hero">
+  <h1>Let’s Start Your Wealth Creation Journey</h1>
+</section>
+
+<section class="contact-section">
+
+  <!-- Contact Form -->
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Phone Number">
+      <textarea rows="5" placeholder="How can we help you?" required></textarea>
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+
+    <!-- Replace these with details from your document -->
+
+    <div class="info-item">
+      <h4>Email</h4>
+      <p>info@entrepreneurwealthcreation.com</p>
+    </div>
+
+    <div class="info-item">
+      <h4>Phone</h4>
+      <p>+27 21 180 2936</p>
+    </div>
+
+    <div class="info-item">
+      <h4>Location</h4>
+      <p>3rd Floor, 7 West Quay Road, Waterfront</p>
+    </div>
+
+    <div class="info-item">
+      <h4>Business Hours</h4>
+      <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>&copy; 2026 Entrepreneur Wealth Creation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
