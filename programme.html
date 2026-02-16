@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrepreneur Wealth Creation | Programs &amp; Membership</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
+    :root{--green:#7E9B75;--gold:#D6A24A;--brown:#9C5B2E;--cream:#F6F1E9;--dark:#2F2F2F;--white:#ffffff;}
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.7;overflow-x:hidden;}
+
+    /* HEADER */
+    header{background:var(--white);padding:20px 8%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+    header img{height:55px;}
+    .desktop-nav{display:flex;align-items:center;}
+    nav a{margin-left:25px;text-decoration:none;color:var(--dark);font-weight:500;position:relative;padding-bottom:5px;transition:.3s ease;}
+    nav a::after{content:"";position:absolute;left:0;bottom:0;width:0%;height:2px;background:var(--gold);transition:.3s ease;}
+    nav a:hover{color:var(--gold);}nav a:hover::after{width:100%;}
+    nav a.active{color:var(--gold);font-weight:600;}nav a.active::after{width:100%;}
+
+    /* HAMBURGER */
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:4px;z-index:301;background:none;border:none;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:.35s ease;transform-origin:center;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    /* SIDEBAR */
+    .sidebar-overlay{position:fixed;inset:0;background:rgba(47,47,47,.55);backdrop-filter:blur(4px);z-index:299;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+    .sidebar-overlay.active{opacity:1;pointer-events:all;}
+    .sidebar{position:fixed;top:0;right:-340px;width:300px;height:100vh;background:var(--dark);z-index:300;display:flex;flex-direction:column;transition:right .4s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,.25);}
+    .sidebar.open{right:0;}
+    .sidebar-header{padding:28px 30px 24px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;}
+    .sidebar-header img{height:40px;filter:brightness(0) invert(1);opacity:.85;}
+    .sidebar-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.5);font-size:22px;line-height:1;transition:color .2s;}
+    .sidebar-close:hover{color:var(--gold);}
+    .sidebar-nav{padding:30px 0;flex:1;}
+    .sidebar-nav a{display:flex;align-items:center;padding:14px 30px;text-decoration:none;color:rgba(255,255,255,.7);font-size:16px;font-weight:500;border-left:3px solid transparent;transition:.25s ease;}
+    .sidebar-nav a:hover,.sidebar-nav a.active{color:var(--gold);background:rgba(214,162,74,.06);border-left-color:var(--gold);}
+    .sidebar-cta{padding:24px 30px 36px;border-top:1px solid rgba(255,255,255,.08);}
+    .sidebar-cta p{color:rgba(255,255,255,.45);font-size:13px;margin-bottom:14px;}
+    .sidebar-cta a{display:block;text-align:center;background:var(--gold);color:var(--dark);padding:13px 20px;border-radius:30px;font-weight:700;text-decoration:none;font-size:14px;transition:.3s ease;}
+    .sidebar-cta a:hover{background:var(--brown);color:#fff;}
+
+    /* HERO — image pattern matching other pages */
+    .page-hero{background:linear-gradient(rgba(47,47,47,.72),rgba(47,47,47,.72)),url("OneWater.png") center/cover no-repeat;color:#fff;padding:130px 8%;}
+    .page-hero .hero-tag{display:inline-block;background:rgba(214,162,74,.18);border:1px solid rgba(214,162,74,.45);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:28px;}
+    .page-hero h1{font-family:'Poppins',sans-serif;font-size:46px;max-width:700px;line-height:1.2;margin-bottom:16px;}
+    .page-hero p{max-width:580px;opacity:.8;font-size:17px;}
+
+    /* SECTIONS */
+    .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;}
+    .section-title{font-family:'Poppins',sans-serif;font-size:36px;color:var(--brown);margin-bottom:18px;}
+    .section-sub{max-width:700px;font-size:17px;color:#666;margin-bottom:54px;}
+
+    /* TIERS */
+    .tiers-section{background:var(--white);padding:90px 8%;}
+    .tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+    .tier{border-radius:28px;padding:48px 36px;position:relative;transition:.4s ease;}
+    .tier.gold{background:var(--cream);border:2px solid rgba(214,162,74,.3);}
+    .tier.platinum{background:var(--dark);border:2px solid rgba(214,162,74,.25);}
+    .tier.diamond{background:var(--cream);border:2px solid rgba(156,91,46,.3);}
+    .tier:hover{transform:translateY(-8px);}
+    .tier-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:20px;white-space:nowrap;}
+    .tier-icon{width:64px;height:64px;object-fit:contain;margin-bottom:22px;}
+    .tier h3{font-family:'Poppins',sans-serif;font-size:24px;margin-bottom:6px;}
+    .tier.gold h3,.tier.diamond h3{color:var(--dark);}
+    .tier.platinum h3{color:#fff;}
+    .tier-focus{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:block;}
+    .price{font-family:'Poppins',sans-serif;font-size:38px;font-weight:700;line-height:1;}
+    .tier.gold .price,.tier.diamond .price{color:var(--brown);}
+    .tier.platinum .price{color:var(--gold);}
+    .price-note{font-size:14px;color:#999;margin-bottom:20px;margin-top:4px;}
+    .tier.platinum .price-note{color:rgba(255,255,255,.4);}
+    .tier-desc{font-size:15px;line-height:1.7;margin-bottom:28px;}
+    .tier.gold .tier-desc,.tier.diamond .tier-desc{color:#666;}
+    .tier.platinum .tier-desc{color:rgba(255,255,255,.65);}
+    .tier ul{list-style:none;padding:0;margin-bottom:32px;}
+    .tier ul li{padding:11px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:15px;display:flex;align-items:center;gap:12px;}
+    .tier.platinum ul li{border-bottom-color:rgba(255,255,255,.08);color:rgba(255,255,255,.82);}
+    .tier ul li img{width:18px;height:18px;flex-shrink:0;}
+    .tier-btn{display:block;text-align:center;padding:15px 30px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;transition:.3s ease;}
+    .tier.gold .tier-btn,.tier.diamond .tier-btn{border:2px solid var(--green);color:var(--green);}
+    .tier.gold .tier-btn:hover,.tier.diamond .tier-btn:hover{background:var(--green);color:#fff;}
+    .tier.platinum .tier-btn{background:var(--gold);color:var(--dark);border:2px solid var(--gold);}
+    .tier.platinum .tier-btn:hover{background:#c49040;border-color:#c49040;}
+
+    /* ALL INCLUDES */
+    .includes-section{background:var(--dark);padding:90px 8%;}
+    .includes-section .section-title{color:#fff;}
+    .includes-section .section-sub{color:rgba(255,255,255,.6);}
+    .includes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+    .include-item{background:rgba(255,255,255,.06);border-radius:16px;padding:28px;text-align:center;border:1px solid rgba(255,255,255,.08);transition:.3s ease;}
+    .include-item:hover{border-color:var(--gold);background:rgba(214,162,74,.08);}
+    .include-item img{width:40px;height:40px;margin-bottom:14px;}
+    .include-item h4{font-family:'Poppins',sans-serif;color:#fff;font-size:16px;margin-bottom:8px;}
+    .include-item p{color:rgba(255,255,255,.55);font-size:14px;}
+
+    /* PILLARS SUMMARY */
+    .pillars-summary{padding:90px 8%;}
+    .pillars-row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+    .pillar-mini{background:var(--white);border-radius:20px;padding:40px 30px;box-shadow:0 12px 35px rgba(0,0,0,.07);border-top:4px solid var(--gold);transition:.3s ease;}
+    .pillar-mini:nth-child(1){border-top-color:var(--green);}
+    .pillar-mini:nth-child(2){border-top-color:var(--gold);}
+    .pillar-mini:nth-child(3){border-top-color:var(--brown);}
+    .pillar-mini:hover{transform:translateY(-6px);}
+    .pillar-mini h3{font-family:'Poppins',sans-serif;font-size:20px;color:var(--dark);margin-bottom:14px;}
+    .pillar-mini p{font-size:15px;color:#666;margin-bottom:20px;}
+    .pillar-mini a{color:var(--green);font-weight:600;font-size:14px;text-decoration:none;}
+    .pillar-mini a:hover{color:var(--gold);}
+    .pillar-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px;background:rgba(126,155,117,.12);color:var(--green);}
+    .pillar-mini:nth-child(2) .pillar-tag{background:rgba(214,162,74,.12);color:var(--gold);}
+    .pillar-mini:nth-child(3) .pillar-tag{background:rgba(156,91,46,.12);color:var(--brown);}
+
+    /* CTA */
+    .cta-wrap{padding:0 8% 90px;}
+    .cta{background:linear-gradient(135deg,var(--brown),var(--dark));border-radius:28px;padding:70px;text-align:center;}
+    .cta h2{font-family:'Poppins',sans-serif;font-size:36px;color:#fff;margin-bottom:16px;}
+    .cta p{color:rgba(255,255,255,.7);margin-bottom:36px;font-size:17px;max-width:600px;margin-left:auto;margin-right:auto;}
+    .btn{display:inline-block;background:var(--gold);color:var(--dark);padding:15px 36px;text-decoration:none;border-radius:30px;font-weight:700;font-size:15px;transition:.3s ease;}
+    .btn:hover{background:#c49040;transform:translateY(-2px);}
+
+    /* FOOTER */
+    .footer{background:var(--dark);color:var(--cream);padding:80px 8% 30px;position:relative;overflow:hidden;}
+    .footer::before{content:"";position:absolute;top:0;left:0;height:4px;width:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--brown));background-size:200% 200%;animation:gradientMove 6s linear infinite;}
+    @keyframes gradientMove{0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
+    .footer-container{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:50px;}
+    .footer h3{font-family:'Poppins',sans-serif;margin-bottom:20px;font-size:18px;color:var(--gold);}
+    .footer p,.footer-col a{font-size:15px;color:var(--cream);text-decoration:none;margin-bottom:10px;display:block;transition:.3s ease;}
+    .footer-col a:hover{color:var(--gold);transform:translateX(5px);}
+    .footer-logo img{width:120px;margin-bottom:20px;}
+    .footer-logo p{max-width:260px;line-height:1.6;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:50px;padding-top:20px;text-align:center;font-size:14px;color:var(--cream);}
+    .footer-bottom a{display:inline;color:var(--gold);text-decoration:underline;}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .desktop-nav{display:none;}
+      .hamburger{display:flex;}
+      .page-hero{padding:90px 6% 70px;}
+      .page-hero h1{font-size:32px;}
+      .tiers-grid,.pillars-row,.includes-grid,.footer-container{grid-template-columns:1fr;}
+      .tiers-section,.includes-section,.pillars-summary,.cta-wrap{padding:70px 6%;}
+      .cta-wrap{padding:0 6% 70px;}
+      .cta{padding:50px 30px;}
+      .footer{padding:60px 6% 24px;}
+    }
+    @media(min-width:901px){.hamburger{display:none;}}
+  </style>
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <img src="logo.png" alt="EWC Logo">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="programme.html" class="active">Programs</a>
+    <a href="contact.html">Apply</a>
+  </nav>
+  <div class="sidebar-cta">
+    <p>Selective membership — established entrepreneurs only.</p>
+    <a href="contact.html">Begin Application</a>
+  </div>
+</div>
+
+<header>
+  <img src="logo.png" alt="EWC Logo">
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="programme.html" class="active">Programs</a>
+    <a href="contact.html">Apply</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <div class="hero-tag">Structured Tiers of Engagement</div>
+  <h1>Programs &amp; Membership Options</h1>
+  <p>EWC operates through three structured membership tiers — each designed for a different stage of the wealth-building journey. All tiers include access to our vetted ecosystem, mentorship, tax structuring, and wealth investment principles.</p>
+</section>
+
+<!-- TIERS -->
+<section class="tiers-section">
+  <p class="section-label">Choose Your Level</p>
+  <h2 class="section-title">Structured Tiers of Engagement</h2>
+  <p class="section-sub">All applications are reviewed individually. EWC is a premium service and pricing is displayed transparently — it reflects the depth of access and support provided at each level.</p>
+  <div class="tiers-grid">
+
+    <div class="tier gold">
+      <img class="tier-icon" src="https://img.icons8.com/ios/76/D6A24A/medal--v1.png" alt="Gold">
+      <h3>Gold</h3>
+      <span class="tier-focus">Foundational Support</span>
+      <div class="price">R12,500</div>
+      <div class="price-note">per month, billed monthly</div>
+      <p class="tier-desc">Designed for established entrepreneurs looking to optimise their operations, build financial literacy, and gain access to the EWC ecosystem and private banking network.</p>
+      <ul>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Basic Business Mentorship</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Operational Efficiency Guidance</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Fundamentals of Financial Literacy</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Introduction to Private Banking Services</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Wealth Management Basics</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> EWC Community Network Access</li>
+      </ul>
+      <a href="contact.html" class="tier-btn">Apply for Gold</a>
+    </div>
+
+    <div class="tier platinum">
+      <span class="tier-badge">Most Popular</span>
+      <img class="tier-icon" src="https://img.icons8.com/ios/76/D6A24A/trophy--v1.png" alt="Platinum">
+      <h3>Platinum</h3>
+      <span class="tier-focus">In-Depth Support</span>
+      <div class="price">R25,000</div>
+      <div class="price-note">per month, billed monthly</div>
+      <p class="tier-desc">For entrepreneurs ready to raise capital, access funding networks, and build the trust and tax structures needed to scale confidently — with premium mentorship throughout.</p>
+      <ul>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Premium Business Mentorship</li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Capital Raising &amp; Funding Networks</li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Establishing a Business Community</li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Trust &amp; Tax Planning</li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Private Banking Tailored to Entrepreneurs</li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Access to Transformation Capital Networks</li>
+      </ul>
+      <a href="contact.html" class="tier-btn">Apply for Platinum</a>
+    </div>
+
+    <div class="tier diamond">
+      <img class="tier-icon" src="https://img.icons8.com/ios/76/9C5B2E/diamond--v1.png" alt="Diamond">
+      <h3>Diamond</h3>
+      <span class="tier-focus">The Private Family Office</span>
+      <div class="price">R50,000</div>
+      <div class="price-note">per month, billed monthly</div>
+      <p class="tier-desc">The most comprehensive tier — delivering a full private family office set-up, advanced wealth management, legacy planning, and access to private equity for generational impact.</p>
+      <ul>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Full Private Family Office Set-Up</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Advanced Wealth Management</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Legacy &amp; Generational Planning</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Private Equity Opportunities</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Strategic Capital Management</li>
+        <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Comprehensive Generational &amp; Business Support</li>
+      </ul>
+      <a href="contact.html" class="tier-btn">Apply for Diamond</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ALL TIERS INCLUDE -->
+<section class="includes-section">
+  <p class="section-label">Ecosystem Benefits</p>
+  <h2 class="section-title">All Tiers Include</h2>
+  <p class="section-sub">Every EWC member benefits from our core ecosystem offerings regardless of their selected tier.</p>
+  <div class="includes-grid">
+    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/user-male-circle--v1.png" alt="mentorship"><h4>Mentorship Access</h4><p>Structured mentorship from experienced entrepreneurs and industry leaders.</p></div>
+    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/consultation--v1.png" alt="advice"><h4>Strategic Advice</h4><p>Specialised advice across business strategy, operations, and growth.</p></div>
+    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/accounting--v1.png" alt="tax"><h4>Tax Structuring</h4><p>Guidance on tax-efficient structures to protect and grow your wealth legitimately.</p></div>
+    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/positive-dynamic--v1.png" alt="investment"><h4>Wealth Investment Principles</h4><p>Education and access to wealth investment frameworks and principles.</p></div>
+  </div>
+</section>
+
+<!-- PILLARS SUMMARY -->
+<section class="pillars-summary">
+  <p class="section-label">Our Framework</p>
+  <h2 class="section-title">The Three Pillars Behind Every Programme</h2>
+  <p class="section-sub">All EWC programmes are built on the three interconnected pillars that form the foundation of sustainable wealth.</p>
+  <div class="pillars-row">
+    <div class="pillar-mini"><span class="pillar-tag">Pillar 1</span><h3>Strategic Mentorship &amp; Resilience</h3><p>Psychological fortitude and structured guidance for navigating high-stakes business decisions and growth phases.</p><a href="service.html">Learn more →</a></div>
+    <div class="pillar-mini"><span class="pillar-tag">Pillar 2</span><h3>Funding &amp; Capital Flow</h3><p>Access to R1–R3 Billion in Transformation Capital through accountability frameworks and funding networks.</p><a href="service.html">Learn more →</a></div>
+    <div class="pillar-mini"><span class="pillar-tag">Pillar 3</span><h3>The Family Office &amp; Legacy</h3><p>Trust structures, generational planning, and investment growth that protects personal wealth from business volatility.</p><a href="service.html">Learn more →</a></div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <div class="cta">
+    <h2>Ready to Apply?</h2>
+    <p>Membership is selective. Applications are reviewed individually to ensure you and the EWC ecosystem are the right fit for each other.</p>
+    <a href="contact.html" class="btn">Begin Your Application</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo footer-col">
+      <img src="logo.png" alt="Entrepreneur Wealth Creation Logo">
+      <p>Building for South Africa's Rising Wealth Class. Economic Empowerment &amp; Generational Wealth.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>3rd Floor, 7 West Quay Road</p>
+      <p>Waterfront, Cape Town</p>
+      <p>+27 21 180 2936</p>
+      <p>info@entrepreneurwealthcreation.com</p>
+      <p>Mon–Fri: 9:00 AM – 5:00 PM</p>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="programme.html">Programs</a>
+      <a href="contact.html">Apply</a>
+    </div>
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Entrepreneur Wealth Creation. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank">Ferguson Media</a>.</div>
+</footer>
+
+<script>
+  const hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay'),closeBtn=document.getElementById('sidebarClose');
+  const open=()=>{sidebar.classList.add('open');overlay.classList.add('active');hamburger.classList.add('open');document.body.style.overflow='hidden';};
+  const close=()=>{sidebar.classList.remove('open');overlay.classList.remove('active');hamburger.classList.remove('open');document.body.style.overflow='';};
+  hamburger.addEventListener('click',()=>sidebar.classList.contains('open')?close():open());
+  closeBtn.addEventListener('click',close);overlay.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+</script>
+</body>
+</html>
