@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entrepreneur Wealth Creation | Apply for Membership</title>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
   <style>
     /* Same fonts as existing site */
@@ -814,9 +813,9 @@
      4. Replace the three constants below:
   ============================================= */
 const EMAILJS_PUBLIC_KEY  = '32FOtBf-pk-tbd2XU';   
-const EMAILJS_SERVICE_ID  = 'service_efsjb46';   
+const EMAILJS_SERVICE_ID  = 'service_x3wetjc';   
 const EMAILJS_TEMPLATE_ID = 'template_zqnhmhe';  
-const RECIPIENT_EMAIL     = 'danielasivesimoki05@gmail.com';
+const RECIPIENT_EMAIL     = 'info@entrepreneurwealthcreation.co.za';
 
   /* Init EmailJS */
   (function(){ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); })();
@@ -1039,29 +1038,34 @@ Submitted via entrepreneurwealthcreation.com`.trim();
   }
 
   /* ─── SUBMIT ─── */
+
   async function submitApplication(){
-    btnNext.disabled = true;
-    btnNext.classList.add('loading');
-    btnNext.style.position = 'relative';
+  btnNext.disabled = true;
+  btnNext.classList.add('loading');
+  btnNext.style.position = 'relative';
 
-    const refNumber = generateRef();
-    const params = {
-      name:    document.getElementById('execName').value.trim(),
-      email:   document.getElementById('linkedin').value.trim(),
-      title:   `EWC Application — ${document.getElementById('companyName').value.trim()} [${refNumber}]`,
-      message: buildEmailBody(),
-      time:    new Date().toLocaleString('en-ZA', { dateStyle: 'medium', timeStyle: 'short' })
-    };
+  const refNumber = generateRef();
 
-    try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
-    } catch(err){
-      console.error('EmailJS error:', err);
-      /* Still show confirmation — log errors to your service in production */
-    }
-
-    showConfirmation(refNumber);
+  try {
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '2d055d7f-d13f-42cb-9250-e0048653a490',
+        subject: `EWC Application — ${document.getElementById('companyName').value.trim()} [${refNumber}]`,
+        message: buildEmailBody(),
+        name: document.getElementById('execName').value.trim(),
+        email: document.getElementById('linkedin').value.trim()
+      })
+    });
+  } catch(err){
+    console.error('Web3Forms error:', err);
   }
+
+  showConfirmation(refNumber);
+}
+
+      
 
   /* ─── CONFIRMATION SCREEN ─── */
   function showConfirmation(refNumber){
