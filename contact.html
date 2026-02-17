@@ -1046,10 +1046,11 @@ Submitted via entrepreneurwealthcreation.com`.trim();
 
     const refNumber = generateRef();
     const params = {
-      to_email:   RECIPIENT_EMAIL,
-      subject:    `EWC Application — ${document.getElementById('companyName').value.trim()} [${refNumber}]`,
-      message:    buildEmailBody(),
-      ref_number: refNumber
+      name:    document.getElementById('execName').value.trim(),
+      email:   document.getElementById('linkedin').value.trim(),
+      title:   `EWC Application — ${document.getElementById('companyName').value.trim()} [${refNumber}]`,
+      message: buildEmailBody(),
+      time:    new Date().toLocaleString('en-ZA', { dateStyle: 'medium', timeStyle: 'short' })
     };
 
     try {
