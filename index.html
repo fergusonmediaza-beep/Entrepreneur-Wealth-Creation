@@ -47,11 +47,11 @@
     .hero{background:linear-gradient(rgba(47,47,47,.68),rgba(47,47,47,.68)),url("hero.png") center/cover no-repeat;color:#fff;padding:130px 8%;}
     .hero-tag{display:inline-block;background:rgba(214,162,74,.18);border:1px solid rgba(214,162,74,.45);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:28px;}
     .hero h1{font-family:'Poppins',sans-serif;font-size:52px;max-width:700px;line-height:1.15;margin-bottom:20px;}
-    .hero h1 em{font-style:normal;color:var(--gold);} 
+    .hero h1 em{font-style:normal;color:var(--gold);}
     .hero p{max-width:530px;opacity:.8;font-size:17px;margin-bottom:12px;}
     .hero .psych-line{font-family:'Poppins',sans-serif;font-size:15px;color:var(--gold);font-weight:600;letter-spacing:.5px;margin-bottom:36px;}
     .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-    .btn-gold{background:var(--gold);color:var(--dark);padding:15px 36px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;transition:.3s ease;}
+    .btn-gold{background:var(--gold);color:var(--dark);padding:15px 36px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;transition:.3s ease;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:inline-block;}
     .btn-gold:hover{background:#c49040;transform:translateY(-2px);}
     .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35);padding:15px 36px;border-radius:30px;font-weight:600;font-size:15px;text-decoration:none;transition:.3s ease;}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
@@ -125,7 +125,39 @@
     .cap-item strong{color:var(--gold);display:block;margin-bottom:8px;font-family:'Poppins',sans-serif;font-size:15px;}
     .cap-item p{color:rgba(255,255,255,.6);font-size:14px;}
 
-    /* MEMBERSHIP TIERS — no list, clean card */
+    /* INSTITUTIONAL NETWORK */
+    .network-section{padding:90px 8%;background:var(--white);}
+    .network-section .section-intro{font-size:17px;color:#666;max-width:640px;margin-bottom:50px;}
+    .network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px;}
+    .network-item{background:var(--cream);border-radius:20px;padding:36px 28px;text-align:center;border:1px solid rgba(214,162,74,.15);transition:.3s ease;}
+    .network-item:hover{border-color:var(--gold);transform:translateY(-4px);}
+    .network-icon{width:56px;height:56px;background:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+    .network-icon img{width:28px;height:28px;filter:invert(1);}
+    .network-item h4{font-family:'Poppins',sans-serif;font-size:16px;color:var(--dark);margin-bottom:10px;}
+    .network-item p{font-size:14px;color:#777;line-height:1.6;}
+    .network-disclaimer{background:var(--dark);border-radius:16px;padding:22px 28px;display:flex;gap:16px;align-items:flex-start;}
+    .network-disclaimer img{width:20px;height:20px;flex-shrink:0;margin-top:3px;}
+    .network-disclaimer p{color:rgba(255,255,255,.6);font-size:14px;}
+    .network-disclaimer strong{color:var(--gold);}
+
+    /* CAPITAL OUTCOMES */
+    .outcomes-section{padding:90px 8%;background:var(--dark);}
+    .outcomes-section .section-title{color:#fff;}
+    .outcomes-section .section-intro{color:rgba(255,255,255,.55);font-size:17px;max-width:640px;margin-bottom:50px;}
+    .outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .outcome-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:40px 32px;position:relative;overflow:hidden;}
+    .outcome-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;}
+    .outcome-card:nth-child(1)::before{background:var(--green);}
+    .outcome-card:nth-child(2)::before{background:var(--gold);}
+    .outcome-card:nth-child(3)::before{background:var(--brown);}
+    .outcome-sector{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(214,162,74,.12);color:var(--gold);padding:4px 14px;border-radius:20px;margin-bottom:20px;}
+    .outcome-card h4{font-family:'Poppins',sans-serif;font-size:18px;color:#fff;margin-bottom:14px;}
+    .outcome-stat{font-family:'Poppins',sans-serif;font-size:30px;font-weight:700;color:var(--gold);margin-bottom:8px;line-height:1.1;}
+    .outcome-card p{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:20px;line-height:1.65;}
+    .outcome-tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);}
+    .outcome-note{text-align:center;margin-top:30px;font-size:13px;color:rgba(255,255,255,.3);font-style:italic;}
+
+    /* MEMBERSHIP TIERS */
     .tiers-section{padding:90px 8%;background:var(--white);}
     .tiers-section .section-sub{font-size:16px;color:#777;max-width:640px;margin-bottom:50px;}
     .tiers-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -190,6 +222,161 @@
     .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:50px;padding-top:20px;text-align:center;font-size:14px;color:var(--cream);}
     .footer-bottom a{display:inline;color:var(--gold);text-decoration:underline;}
 
+    /* ══════════════════════════════════════
+       AUDIT MODAL
+    ══════════════════════════════════════ */
+    .audit-modal-bg{
+      position:fixed;inset:0;z-index:400;
+      background:rgba(20,18,15,.88);
+      backdrop-filter:blur(6px);
+      display:flex;align-items:center;justify-content:center;
+      padding:20px;
+      opacity:0;pointer-events:none;
+      transition:opacity .35s ease;
+    }
+    .audit-modal-bg.open{opacity:1;pointer-events:all;}
+
+    .audit-modal{
+      background:var(--dark);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:28px;
+      width:100%;max-width:660px;
+      max-height:90vh;
+      overflow-y:auto;
+      padding:52px 48px 44px;
+      position:relative;
+      transform:translateY(24px);
+      transition:transform .4s cubic-bezier(.4,0,.2,1);
+      scrollbar-width:thin;
+      scrollbar-color:rgba(214,162,74,.3) transparent;
+    }
+    .audit-modal-bg.open .audit-modal{transform:translateY(0);}
+
+    /* Close button */
+    .modal-close{
+      position:absolute;top:20px;right:24px;
+      background:none;border:none;cursor:pointer;
+      color:rgba(255,255,255,.35);font-size:22px;line-height:1;
+      transition:color .2s ease;padding:4px 8px;
+    }
+    .modal-close:hover{color:var(--gold);}
+
+    /* Modal header */
+    .modal-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(214,162,74,.6);margin-bottom:10px;}
+    .modal-title{font-family:'Poppins',sans-serif;font-size:22px;color:#fff;margin-bottom:6px;}
+    .modal-sub{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:32px;line-height:1.55;}
+
+    /* Progress */
+    .modal-progress-track{background:rgba(255,255,255,.07);border-radius:6px;height:3px;overflow:hidden;margin-bottom:8px;}
+    .modal-progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:6px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%;}
+    .modal-progress-meta{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.5px;margin-bottom:30px;}
+
+    /* Question */
+    .modal-q-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(214,162,74,.45);margin-bottom:12px;}
+    .modal-q-text{font-family:'Poppins',sans-serif;font-size:17px;color:#fff;font-weight:600;line-height:1.45;margin-bottom:26px;}
+
+    /* Options */
+    .modal-options{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+    .modal-option{
+      display:flex;align-items:flex-start;gap:14px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:12px;padding:14px 18px;
+      cursor:pointer;transition:.2s ease;
+    }
+    .modal-option:hover{background:rgba(214,162,74,.05);border-color:rgba(214,162,74,.2);}
+    .modal-option.selected{background:rgba(214,162,74,.09);border-color:var(--gold);}
+    .modal-option-dot{
+      width:18px;height:18px;border-radius:50%;
+      border:2px solid rgba(255,255,255,.18);
+      flex-shrink:0;margin-top:2px;
+      display:flex;align-items:center;justify-content:center;
+      transition:.2s ease;
+    }
+    .modal-option.selected .modal-option-dot{background:var(--gold);border-color:var(--gold);}
+    .modal-option.selected .modal-option-dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--dark);}
+    .modal-option-text{font-size:14px;color:rgba(255,255,255,.65);line-height:1.45;}
+    .modal-option.selected .modal-option-text{color:#fff;}
+
+    /* Controls */
+    .modal-controls{display:flex;justify-content:space-between;align-items:center;}
+    .modal-btn-back{
+      background:none;border:1px solid rgba(255,255,255,.1);
+      color:rgba(255,255,255,.35);padding:11px 22px;
+      border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;
+      transition:.2s ease;font-family:'Inter',sans-serif;
+    }
+    .modal-btn-back:hover{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.6);}
+    .modal-btn-back:disabled{opacity:.18;cursor:not-allowed;}
+    .modal-btn-next{
+      background:var(--gold);color:var(--dark);
+      padding:12px 30px;border-radius:30px;font-size:14px;font-weight:700;
+      border:none;cursor:pointer;transition:.3s ease;
+      font-family:'Inter',sans-serif;opacity:.3;pointer-events:none;
+    }
+    .modal-btn-next.ready{opacity:1;pointer-events:all;}
+    .modal-btn-next.ready:hover{background:#c49040;transform:translateY(-1px);}
+
+    /* Capture form inside modal */
+    .modal-capture{display:none;}
+    .modal-capture.active{display:block;}
+    .capture-field{margin-bottom:18px;}
+    .capture-field label{display:block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:7px;}
+    .capture-field input,
+    .capture-field select{
+      width:100%;background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);border-radius:10px;
+      padding:13px 16px;color:#fff;font-size:14px;
+      font-family:'Inter',sans-serif;transition:.2s ease;outline:none;
+      appearance:none;-webkit-appearance:none;
+    }
+    .capture-field input::placeholder{color:rgba(255,255,255,.2);}
+    .capture-field input:focus,
+    .capture-field select:focus{border-color:rgba(214,162,74,.45);}
+    .capture-field select option{background:var(--dark);}
+    .capture-submit{
+      width:100%;background:var(--gold);color:var(--dark);
+      padding:15px;border-radius:30px;font-size:14px;font-weight:700;
+      border:none;cursor:pointer;margin-top:6px;transition:.3s ease;
+      font-family:'Poppins',sans-serif;
+    }
+    .capture-submit:hover{background:#c49040;}
+    .capture-privacy{font-size:11px;color:rgba(255,255,255,.2);text-align:center;margin-top:14px;line-height:1.5;}
+
+    /* Results inside modal */
+    .modal-results{display:none;text-align:center;}
+    .modal-results.active{display:block;}
+    .result-badge{
+      display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;padding:5px 18px;border-radius:30px;margin-bottom:22px;
+    }
+    .result-badge.tier-0{background:rgba(156,91,46,.15);color:var(--brown);border:1px solid rgba(156,91,46,.3);}
+    .result-badge.tier-1{background:rgba(214,162,74,.12);color:var(--gold);border:1px solid rgba(214,162,74,.3);}
+    .result-badge.tier-2{background:rgba(126,155,117,.12);color:var(--green);border:1px solid rgba(126,155,117,.3);}
+    .result-score{font-family:'Poppins',sans-serif;font-size:58px;font-weight:700;color:var(--gold);line-height:1;}
+    .result-score-max{font-size:13px;color:rgba(255,255,255,.25);margin-bottom:22px;}
+    .result-bar-track{background:rgba(255,255,255,.07);border-radius:6px;height:5px;overflow:hidden;margin-bottom:6px;}
+    .result-bar-fill{height:100%;border-radius:6px;transition:width 1.2s cubic-bezier(.4,0,.2,1) .2s;width:0%;}
+    .result-bar-fill.tier-0{background:linear-gradient(90deg,#9C5B2E,#c4793d);}
+    .result-bar-fill.tier-1{background:linear-gradient(90deg,#b8883a,var(--gold));}
+    .result-bar-fill.tier-2{background:linear-gradient(90deg,var(--green),var(--gold));}
+    .result-bar-labels{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.2);margin-bottom:24px;}
+    .result-category{font-family:'Poppins',sans-serif;font-size:19px;color:#fff;font-weight:700;margin-bottom:14px;}
+    .result-diagnostic{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:12px;text-align:left;}
+    .result-implication{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;text-align:left;font-style:italic;border-top:1px solid rgba(255,255,255,.06);padding-top:14px;margin-bottom:30px;}
+    .result-cta{
+      display:inline-block;background:var(--gold);color:var(--dark);
+      padding:14px 36px;border-radius:30px;font-weight:700;font-size:14px;
+      text-decoration:none;transition:.3s ease;font-family:'Poppins',sans-serif;
+    }
+    .result-cta:hover{background:#c49040;transform:translateY(-2px);}
+    .result-retake{
+      display:block;margin-top:14px;font-size:12px;color:rgba(255,255,255,.25);
+      cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif;
+      transition:.2s ease;
+    }
+    .result-retake:hover{color:rgba(255,255,255,.5);}
+
     /* RESPONSIVE */
     @media(max-width:900px){
       .desktop-nav{display:none;}
@@ -199,20 +386,98 @@
       .hero p{font-size:15px;}
       .stat-bar{grid-template-columns:repeat(2,1fr);}
       .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}
-      .stat:nth-child(2){border-right:none;}
-      .trap-grid,.psych-compare,.pillars-grid,.tiers-row,.legacy-grid,.capital-two-col,.footer-container{grid-template-columns:1fr;}
+      .trap-grid,.psych-compare,.pillars-grid,.tiers-row,.legacy-grid,.capital-two-col,.footer-container,.network-grid,.outcomes-grid{grid-template-columns:1fr;}
       .psych-vs{display:none;}
       .capital-band .big-fig{font-size:42px;}
       .manifesto-quote{font-size:22px;}
-      .crossroad-section,.psychology-section,.pillars-section,.capital-band,.tiers-section,.legacy-section,.manifesto-section{padding:70px 6%;}
+      .crossroad-section,.psychology-section,.pillars-section,.capital-band,.tiers-section,.legacy-section,.manifesto-section,.network-section,.outcomes-section{padding:70px 6%;}
       .footer{padding:60px 6% 24px;}
       .psych-col{padding:32px 24px;}
+      .audit-modal{padding:40px 28px 36px;}
     }
     @media(min-width:901px){.hamburger{display:none;}}
   </style>
 </head>
 <body>
 
+<!-- ══════════════════════════════════════
+     AUDIT MODAL
+══════════════════════════════════════ -->
+<div class="audit-modal-bg" id="auditModalBg">
+  <div class="audit-modal" id="auditModal">
+    <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
+
+    <!-- QUIZ VIEW -->
+    <div id="modalQuizView">
+      <div class="modal-eyebrow">Executive Liquidity Scorecard</div>
+      <h2 class="modal-title">Capital Readiness Diagnostic</h2>
+      <p class="modal-sub">This 3-minute diagnostic evaluates whether your enterprise is building transferable institutional wealth or operating revenue.</p>
+      <div class="modal-progress-track"><div class="modal-progress-fill" id="modalProgressFill"></div></div>
+      <div class="modal-progress-meta">
+        <span id="modalProgressLabel">Question 1 of 10</span>
+        <span>Confidential · No Obligation</span>
+      </div>
+      <div class="modal-q-label" id="modalQLabel">Question 01</div>
+      <div class="modal-q-text" id="modalQText"></div>
+      <div class="modal-options" id="modalOptions"></div>
+      <div class="modal-controls">
+        <button class="modal-btn-back" id="modalBtnBack" disabled>← Previous</button>
+        <button class="modal-btn-next" id="modalBtnNext">Continue →</button>
+      </div>
+    </div>
+
+    <!-- CAPTURE VIEW -->
+    <div class="modal-capture" id="modalCaptureView">
+      <div class="modal-eyebrow">Almost There</div>
+      <h2 class="modal-title">Confirm Your Details</h2>
+      <p class="modal-sub">Your diagnostic is complete. Provide your details below — results are reviewed by the EWC advisory team within 48 hours.</p>
+      <form id="modalCaptureForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="hidden" name="_subject" value="EWC Liquidity Audit Submission">
+        <input type="hidden" name="audit_score" id="hiddenScore">
+        <input type="hidden" name="audit_category" id="hiddenCategory">
+        <input type="hidden" name="audit_answers" id="hiddenAnswers">
+        <div class="capture-field">
+          <label>Full Name</label>
+          <input type="text" name="full_name" placeholder="Your full name" required autocomplete="name">
+        </div>
+        <div class="capture-field">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="your@company.com" required autocomplete="email">
+        </div>
+        <div class="capture-field">
+          <label>Annual Revenue Range</label>
+          <select name="revenue_range" required>
+            <option value="" disabled selected>Select your revenue range</option>
+            <option>R5M – R15M per annum</option>
+            <option>R15M – R50M per annum</option>
+            <option>R50M – R150M per annum</option>
+            <option>R150M – R500M per annum</option>
+            <option>R500M+ per annum</option>
+          </select>
+        </div>
+        <button type="submit" class="capture-submit">Generate My Liquidity Score</button>
+        <p class="capture-privacy">Your information is treated with complete confidentiality and used solely to facilitate your EWC advisory review.</p>
+      </form>
+    </div>
+
+    <!-- RESULTS VIEW -->
+    <div class="modal-results" id="modalResultsView">
+      <div class="result-badge" id="resBadge"></div>
+      <div class="result-score" id="resScore"></div>
+      <div class="result-score-max">out of 30</div>
+      <div class="result-bar-track"><div class="result-bar-fill" id="resBarFill"></div></div>
+      <div class="result-bar-labels"><span>Fragile</span><span>Structured</span><span>Institutional</span></div>
+      <div class="result-category" id="resCategory"></div>
+      <p class="result-diagnostic" id="resDiagnostic"></p>
+      <p class="result-implication" id="resImplication"></p>
+      <a href="contact.html" class="result-cta">Proceed to Executive Application</a>
+      <button class="result-retake" id="resRetake">Retake diagnostic</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ SIDEBAR ══ -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 <div class="sidebar" id="sidebar">
   <div class="sidebar-header">
@@ -222,7 +487,7 @@
   <nav class="sidebar-nav">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
-    <a href="service.html">Services</a> 
+    <a href="service.html">Services</a>
     <a href="programme.html">Programs</a>
     <a href="contact.html">Apply</a>
   </nav>
@@ -244,106 +509,170 @@
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
+<!-- HERO — button renamed, same layout -->
 <section class="hero">
-  <div class="hero-tag">Economic Empowerment · Generational Wealth · South Africa</div>
-  <h1>We Are Shaping a<br><em>New African Psychology</em><br>of Wealth.</h1>
-  <p>EWC is not a coaching platform. It is an exclusive ecosystem for South Africa's established entrepreneurs — built around strategic mentorship, transformation capital, and private family office structures.</p>
-  <p class="psych-line">The shift from looking rich to being wealthy.</p>
+  <div class="hero-tag">Wealth Architecture · Capital Access · South Africa</div>
+  <h1>EWC is a<br><em>Wealth Realization Engine</em><br>for Serious Operators.</h1>
+  <p>Structured capital engineering for South Africa's established entrepreneurs — combining private wealth structuring, institutional capital access, and family office infrastructure.</p>
+  <p class="psych-line">From revenue generation to institutional asset positioning.</p>
   <div class="hero-actions">
-    <a href="contact.html" class="btn-gold">Begin Your Application</a>
+    <button class="btn-gold" id="openAuditBtn">Start Capital Readiness Audit</button>
     <a href="about.html" class="btn-outline">Our Story</a>
   </div>
 </section>
 
 <div class="stat-bar">
-  <div class="stat"><div class="num">R1–3B</div><div class="label">Transformation Capital</div></div>
-  <div class="stat"><div class="num">3</div><div class="label">Interconnected Pillars</div></div>
-  <div class="stat"><div class="num">3</div><div class="label">Membership Tiers</div></div>
-  <div class="stat"><div class="num">2+</div><div class="label">Years Min. Tenure Required</div></div>
+  <div class="stat"><div class="num">R1–3B</div><div class="label">Institutional Capital Pool</div></div>
+  <div class="stat"><div class="num">3</div><div class="label">Wealth Architecture Pillars</div></div>
+  <div class="stat"><div class="num">3</div><div class="label">Structured Membership Tiers</div></div>
+  <div class="stat"><div class="num">R5M+</div><div class="label">Minimum Annual Revenue</div></div>
 </div>
 
+<!-- LIQUIDITY TRAP -->
 <section class="crossroad-section">
-  <p class="section-label">The Problem We Solve</p>
-  <h2 class="section-title">The Psychological Crossroad &amp; The Liquidity Trap</h2>
-  <p class="section-intro">South Africa's established entrepreneurs face a unique set of pressures that keep sustained wealth elusive — even when revenue is strong. EWC was built to address these challenges directly.</p>
+  <p class="section-label">The Capital Problem</p>
+  <h2 class="section-title">The Liquidity Trap Facing Established Operators</h2>
+  <p class="section-intro">South Africa's most capable entrepreneurs face a structural problem — not a skills gap. Strong revenue does not automatically produce structured wealth. EWC exists to close this gap through capital engineering, not coaching.</p>
   <div class="trap-grid">
-    <div class="trap-item"><h4><span class="badge">Pressure</span>Family Overextension</h4><p>Extended family networks continuously drain liquidity, preventing capital from being protected or compounded into lasting wealth.</p></div>
-    <div class="trap-item"><h4><span class="badge">Pressure</span>Lack of Strategy</h4><p>Talented entrepreneurs operating without high-level guidance — making high-stakes decisions unsupported and in isolation.</p></div>
-    <div class="trap-item"><h4><span class="badge">Pressure</span>Consumption Over Investment</h4><p>Cash flow consumed rather than structured into wealth-generating and wealth-protecting vehicles that outlast the business.</p></div>
-    <div class="trap-item"><h4><span class="badge">Pressure</span>The Capital Gap</h4><p>Significant transformation capital exists in South Africa — but established entrepreneurs lack the frameworks to access it.</p></div>
+    <div class="trap-item"><h4><span class="badge">Exposure</span>Family Overextension</h4><p>Extended family financial obligations continuously drain liquidity, preventing capital from being protected, compounded, or positioned institutionally.</p></div>
+    <div class="trap-item"><h4><span class="badge">Exposure</span>Absence of Strategic Infrastructure</h4><p>Operating without institutional-grade guidance — making high-stakes capital decisions unsupported, in isolation, without structured advisory.</p></div>
+    <div class="trap-item"><h4><span class="badge">Exposure</span>Consumption Over Architecture</h4><p>Cash flow consumed rather than engineered into wealth-generating vehicles and asset-backed structures that outlast the business cycle.</p></div>
+    <div class="trap-item"><h4><span class="badge">Exposure</span>The Institutional Capital Gap</h4><p>Significant transformation capital is available in South Africa — but established operators lack the governance and trust frameworks to access it.</p></div>
   </div>
   <div class="trap-consequence">
     <img src="https://img.icons8.com/ios/24/D6A24A/info--v1.png" alt="consequence">
-    <p><strong>The Consequence:</strong> A cycle where risk is high, but the reward — sustained, generational wealth — remains elusive. EWC exists to break this cycle through three interconnected pillars of support.</p>
+    <p><strong>The Structural Result:</strong> Revenue exists. Liquidity does not. Sustained, generational wealth remains elusive without the architecture to support it. EWC engineers this architecture across three interconnected pillars.</p>
   </div>
 </section>
 
+<!-- PSYCHOLOGY SHIFT -->
 <section class="psychology-section">
   <div class="psych-header">
     <p class="section-label">A New African Psychology of Wealth</p>
-    <h2 class="section-title">The Shift EWC is Leading</h2>
+    <h2 class="section-title">The Structural Shift EWC Engineers</h2>
   </div>
   <div class="psych-compare">
     <div class="psych-col status">
       <h3>The Status Quo</h3>
-      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/car--v1.png" alt="car"><p>The pressure to consume. Cars, brands, and lifestyle serve as proof and validation of success.</p></div>
-      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/negative-dynamic--v1.png" alt="fragility"><p>Immediate gratification. Long-term financial fragility as the result.</p></div>
-      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/shopping-cart--v1.png" alt="consumption"><p>Cash flow consumed rather than protected or invested for the future.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/car--v1.png" alt="car"><p>Consumption-driven positioning. Lifestyle signals used as proof of success rather than institutional asset growth.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/negative-dynamic--v1.png" alt="fragility"><p>Liquidity volatility. Revenue without structure produces short-term gains and long-term fragility.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/shopping-cart--v1.png" alt="consumption"><p>Capital at risk. Personal wealth fully exposed to business cycles with no governance firewall.</p></div>
     </div>
     <div class="psych-vs">VS</div>
     <div class="psych-col vision">
-      <h3>The EWC Vision</h3>
-      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/positive-dynamic--v1.png" alt="pride"><p>The new chapter. Defined by Pride, Resilience, and Legacy — not appearance.</p></div>
-      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/family--v1.png" alt="empowerment"><p>Result: Economic Empowerment and Generational Wealth that outlasts any single generation.</p></div>
-      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/building--v1.png" alt="institution"><p>Institutions and communities that trust, respect, and inherit your success.</p></div>
+      <h3>The EWC Architecture</h3>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/positive-dynamic--v1.png" alt="pride"><p>Asset-backed positioning. Institutional capital structures that compound and protect across market cycles.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/family--v1.png" alt="empowerment"><p>Liquidity governance. Family and personal wealth protected through structured boundary and obligation frameworks.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/building--v1.png" alt="institution"><p>Generational infrastructure. Wealth separated from business risk and structured for responsible succession.</p></div>
     </div>
   </div>
 </section>
-<div class="shift-banner">"The shift from looking rich to being wealthy."</div>
+<div class="shift-banner">"From revenue generation to institutional wealth realization."</div>
 
+<!-- PILLARS -->
 <section class="pillars-section">
   <p class="section-label">Our Framework</p>
-  <h2 class="section-title">Three Interconnected Pillars for Sustainable Wealth</h2>
-  <p class="section-sub">Aligning profit with purpose, growth with integrity. Together, Mentorship, Capital, and Legacy create a complete and sustainable wealth ecosystem.</p>
+  <h2 class="section-title">Three Pillars of Wealth Architecture</h2>
+  <p class="section-sub">Capital engineering, institutional alignment, and legacy governance — three interconnected systems that create sustainable, protected wealth.</p>
   <div class="pillars-grid">
-    <div class="pillar"><div class="p-num">01</div><h3>Strategic Mentorship &amp; Resilience</h3><p>Moving beyond survival mode requires more than tactics — it demands psychological fortitude and emotional resilience for high-stakes decision-making.</p><a href="service.html">Explore Pillar 1 →</a></div>
-    <div class="pillar"><div class="p-num">02</div><h3>Funding &amp; Capital Flow</h3><p>Access to R1–R3 Billion in Transformation Capital through accountability and trust frameworks — structured, accountable pathways to serious funding.</p><a href="service.html">Explore Pillar 2 →</a></div>
-    <div class="pillar"><div class="p-num">03</div><h3>The Family Office &amp; Legacy</h3><p>Protecting personal wealth from business volatility. Trust structures and generational planning create a fortress entirely separate from business risk.</p><a href="service.html">Explore Pillar 3 →</a></div>
+    <div class="pillar"><div class="p-num">01</div><h3>Strategic Mentorship &amp; Resilience</h3><p>Moving beyond survival mode requires more than tactics — it demands psychological fortitude and structured decision-making frameworks for high-stakes capital governance.</p><a href="service.html">Explore Pillar 1 →</a></div>
+    <div class="pillar"><div class="p-num">02</div><h3>Access to a R1–R3 Billion Institutional Capital Pool</h3><p>Structured, accountable pathways into South Africa's institutional capital ecosystem — built on governance frameworks, trust architecture, and verifiable financial credibility.</p><a href="service.html">Explore Pillar 2 →</a></div>
+    <div class="pillar"><div class="p-num">03</div><h3>Family Office &amp; Generational Governance</h3><p>A wealth fortress entirely separate from business operations. Trust structures, succession planning, and family governance frameworks that protect what you have built.</p><a href="service.html">Explore Pillar 3 →</a></div>
   </div>
 </section>
 
 <div class="capital-band">
   <div class="big-fig">R1 – R3 BILLION</div>
-  <h3>In Transformation Capital Unlocked</h3>
-  <p>EWC builds the accountability and trust frameworks that give established South African entrepreneurs access to serious transformation capital.</p>
+  <h3>Institutional Capital Pool — Not a Broker Promise</h3>
+  <p>EWC builds the governance, accountability, and trust architecture that qualifies established operators for access to South Africa's institutional capital networks.</p>
   <div class="capital-two-col">
-    <div class="cap-item"><strong>The Mechanism</strong><p>Strong accountability and trust frameworks are required to access this capital. EWC builds these frameworks with you, step by step.</p></div>
-    <div class="cap-item"><strong>The Outcome</strong><p>Capital that aligns profit with purpose — fuelling business growth while maintaining integrity and your long-term legacy vision.</p></div>
+    <div class="cap-item"><strong>Governance Architecture First</strong><p>Institutional capital requires institutional credibility. EWC constructs your financial governance infrastructure before capital is sought — ensuring readiness and positioning.</p></div>
+    <div class="cap-item"><strong>Structured Capital Outcomes</strong><p>Blended facilities, asset-backed leverage, and growth capital aligned with your operational trajectory — not generic loan products or speculative funding arrangements.</p></div>
   </div>
 </div>
 
+<!-- INSTITUTIONAL NETWORK -->
+<section class="network-section">
+  <p class="section-label">Institutional Relationships</p>
+  <h2 class="section-title">Strategic Network &amp; Institutional Alignment</h2>
+  <p class="section-intro">EWC operates within a network of institutional relationships that enable qualified members to access capital pathways, banking structures, and financial services partnerships typically reserved for established corporates.</p>
+  <div class="network-grid">
+    <div class="network-item">
+      <div class="network-icon"><img src="https://img.icons8.com/ios/40/ffffff/bank-building--v1.png" alt="banking"></div>
+      <h4>Tier-1 South African Banking Structures</h4>
+      <p>Preferred rate access, priority banking relationships, and institutional-grade account architectures through established South African banking partners.</p>
+    </div>
+    <div class="network-item">
+      <div class="network-icon"><img src="https://img.icons8.com/ios/40/ffffff/investment-portfolio--v1.png" alt="private equity"></div>
+      <h4>Private Equity &amp; Institutional Capital Networks</h4>
+      <p>Engagement with private equity structures and institutional capital allocators actively deploying transformation capital into qualifying South African businesses.</p>
+    </div>
+    <div class="network-item">
+      <div class="network-icon"><img src="https://img.icons8.com/ios/40/ffffff/handshake--v1.png" alt="affiliates"></div>
+      <h4>Authorized Financial Services Affiliates</h4>
+      <p>Relationships with authorized financial service providers spanning tax optimization, legal structuring, trust administration, and wealth management.</p>
+    </div>
+  </div>
+  <div class="network-disclaimer">
+    <img src="https://img.icons8.com/ios/20/D6A24A/info--v1.png" alt="note">
+    <p><strong>Discretion is standard practice.</strong> The identities of specific institutional partners and capital networks are disclosed exclusively to qualifying members under confidentiality agreement — consistent with how institutional capital relationships are managed at this level.</p>
+  </div>
+</section>
+
+<!-- CAPITAL OUTCOMES -->
+<section class="outcomes-section">
+  <p class="section-label">Capital Outcomes</p>
+  <h2 class="section-title">Confidential Case Illustrations</h2>
+  <p class="section-intro">The following are anonymized representations of capital outcomes achieved through the EWC framework. Details have been modified to protect member confidentiality.</p>
+  <div class="outcomes-grid">
+    <div class="outcome-card">
+      <span class="outcome-sector">Logistics &amp; Supply Chain</span>
+      <h4>Revenue to Structured Capital Transition</h4>
+      <div class="outcome-stat">R50M → R150M</div>
+      <p>An established logistics operator with consistent revenue but no institutional capital access. Over 18 months, EWC structured a blended capital facility and asset-backed leverage position — tripling structured capital from R50M revenue base to R150M in accessible working capital and expansion funding.</p>
+      <span class="outcome-tag">18-month engagement</span>
+    </div>
+    <div class="outcome-card">
+      <span class="outcome-sector">Technology &amp; Software</span>
+      <h4>Income Dependence to Asset-Backed Leverage</h4>
+      <div class="outcome-stat">Asset Position Restructured</div>
+      <p>A technology founder with strong recurring revenue but zero separation between personal income and business cash flow. EWC restructured personal and business asset positioning, establishing trust infrastructure, private banking architecture, and asset-backed leverage that replaced income dependence with structural wealth.</p>
+      <span class="outcome-tag">12-month engagement</span>
+    </div>
+    <div class="outcome-card">
+      <span class="outcome-sector">Manufacturing &amp; Industrial</span>
+      <h4>Post-Restructuring Capital Facility Secured</h4>
+      <div class="outcome-stat">Blended Facility Unlocked</div>
+      <p>A manufacturing operator with audited financials but a prior restructuring that had closed conventional capital channels. EWC rebuilt the financial governance framework, established institutional credibility, and secured a blended capital facility that unlocked the next phase of operational scale.</p>
+      <span class="outcome-tag">24-month engagement</span>
+    </div>
+  </div>
+  <p class="outcome-note">All figures and timelines are indicative. Individual outcomes depend on entity structure, financial history, and capital readiness at point of engagement.</p>
+</section>
+
+<!-- MEMBERSHIP TIERS -->
 <section class="tiers-section">
   <p class="section-label">Structured Tiers of Engagement</p>
-  <h2 class="section-title">Membership Options</h2>
-  <p class="section-sub">Prices are displayed transparently — EWC is a premium service and serious entrepreneurs deserve clarity. All applications are reviewed individually.</p>
+  <h2 class="section-title">Membership Architecture</h2>
+  <p class="section-sub">Pricing is disclosed transparently. EWC is not a commodity service — each tier represents a distinct level of structural access, advisory depth, and capital positioning support.</p>
   <div class="tiers-row">
     <div class="tp-card">
       <div class="tp-label">Gold</div>
-      <h4>Foundational Support</h4>
+      <h4>Wealth Architecture Entry</h4>
       <div class="tp-price">R12,500</div>
       <div class="tp-price-note">per month</div>
-      <span class="tp-focus">Operational Efficiency &amp; Mentorship</span>
-      <p class="tp-desc">Business mentorship, operational efficiency guidance, fundamentals of financial literacy, and an introduction to private banking and wealth management.</p>
+      <span class="tp-focus">Operational Scalability &amp; Wealth Structuring</span>
+      <p class="tp-desc">Entry into structured wealth architecture — operational scalability systems, monthly executive wealth audits, and preferred rate private banking structures for established operators.</p>
       <a href="programme.html">View Full Details</a>
     </div>
     <div class="tp-card featured">
-      <div class="popular-badge">Most Popular</div>
+      <div class="popular-badge">Most Selected</div>
       <div class="tp-label">Platinum</div>
-      <h4>In-Depth Support</h4>
+      <h4>Capital Access &amp; Governance</h4>
       <div class="tp-price">R25,000</div>
       <div class="tp-price-note">per month</div>
-      <span class="tp-focus">Capital Raising &amp; Funding Networks</span>
-      <p class="tp-desc">Premium mentorship, capital raising and funding networks, community building, trust and tax planning, and private banking tailored to entrepreneurs.</p>
+      <span class="tp-focus">Capital Raising, Governance &amp; Family Protection</span>
+      <p class="tp-desc">Full capital access framework with governance structuring, family obligation modeling, liquidity protection systems, and trust and tax engineering for serious operators.</p>
       <a href="programme.html">View Full Details</a>
     </div>
     <div class="tp-card">
@@ -351,35 +680,37 @@
       <h4>Private Family Office</h4>
       <div class="tp-price">R50,000</div>
       <div class="tp-price-note">per month</div>
-      <span class="tp-focus">Generational &amp; Full Business Support</span>
-      <p class="tp-desc">Full private family office set-up, advanced wealth management, legacy and generational planning, private equity opportunities, and strategic capital management.</p>
+      <span class="tp-focus">Full Family Office &amp; Generational Governance</span>
+      <p class="tp-desc">Complete private family office infrastructure — advanced wealth management, family governance and boundary structuring, extended obligation modeling, and private equity positioning.</p>
       <a href="programme.html">View Full Details</a>
     </div>
   </div>
-  <div class="all-tiers-note"><strong>All tiers include:</strong> Mentorship Access · Strategic Advice · Tax Structuring · Wealth Investment Principles</div>
+  <div class="all-tiers-note"><strong>All tiers include:</strong> Mentorship Access · Strategic Advisory · Tax Structuring · Wealth Investment Frameworks · Institutional Network Access</div>
 </section>
 
+<!-- LEGACY -->
 <section class="legacy-section">
   <p class="section-label">Wealth with Purpose</p>
   <h2 class="section-title">Legacy Beyond the Balance Sheet</h2>
-  <p class="section-intro">The goal is not just profit. EWC was built to uplift communities, restore trust in institutions, and create a new standard for African entrepreneurial success that outlasts any single generation.</p>
+  <p class="section-intro">The architecture of sustainable wealth extends beyond financial instruments. EWC builds the institutional, familial, and community structures that ensure wealth compounds across generations.</p>
   <div class="legacy-grid">
     <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/building--v1.png" alt="community"><div><h4>Communities Uplifted</h4><p>Business growth that translates directly into community upliftment and sustainable economic participation across South Africa.</p></div></div>
-    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/family--v1.png" alt="generational"><div><h4>Generational Wealth</h4><p>Families that preserve and pass down wealth — with the structures, education, and discipline to do it responsibly.</p></div></div>
-    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/handshake--v1.png" alt="trust"><div><h4>Institutions Regain Trust</h4><p>Transparency and accountability that restores faith in African business institutions and leadership through demonstrated integrity.</p></div></div>
-    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/recurring-appointment--v1.png" alt="sustained"><div><h4>Wealth Sustained &amp; Shared</h4><p>Wealth is not accumulated and hoarded — it is sustained, structured, and shared responsibly across generations.</p></div></div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/family--v1.png" alt="generational"><div><h4>Generational Wealth Infrastructure</h4><p>Families that preserve and transfer wealth — governed by the structures, education, and discipline built through EWC membership.</p></div></div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/handshake--v1.png" alt="trust"><div><h4>Institutional Trust Restored</h4><p>Transparency and governance that restores faith in African business institutions and leadership through demonstrated accountability.</p></div></div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/recurring-appointment--v1.png" alt="sustained"><div><h4>Wealth Governed &amp; Transferred</h4><p>Not accumulated and exposed — but governed, protected, and transferred according to structures that survive the individual.</p></div></div>
   </div>
 </section>
 
+<!-- MANIFESTO -->
 <section class="manifesto-section">
   <div class="values-row">
-    <span class="value-pill">Dignity</span><span class="value-pill">Discipline</span><span class="value-pill">Empathy</span><span class="value-pill">Accountability</span><span class="value-pill">Success</span><span class="value-pill">Vision</span>
+    <span class="value-pill">Architecture</span><span class="value-pill">Governance</span><span class="value-pill">Liquidity</span><span class="value-pill">Structuring</span><span class="value-pill">Legacy</span><span class="value-pill">Institutional Alignment</span>
   </div>
-  <p class="manifesto-quote">"We are shaping more than portfolios. We are shaping a <em>new African psychology of wealth.</em>"</p>
-  <p class="manifesto-sub">Join South Africa's most exclusive ecosystem for established entrepreneurs. Selective membership — application required.</p>
+  <p class="manifesto-quote">"We are not building portfolios. We are engineering <em>institutional-grade wealth infrastructure</em> for Africa's most serious operators."</p>
+  <p class="manifesto-sub">Selective membership — application and review required. Established operators only.</p>
   <div class="manifesto-actions">
-    <a href="contact.html" class="btn-dark">Begin Your Application</a>
-    <a href="about.html" class="btn-green">Learn Our Story</a>
+    <button class="btn-dark" onclick="openAudit()">Start Capital Readiness Audit</button>
+    <a href="about.html" class="btn-green">Our Story</a>
   </div>
 </section>
 
@@ -387,7 +718,7 @@
   <div class="footer-container">
     <div class="footer-logo footer-col">
       <img src="logo.png" alt="Entrepreneur Wealth Creation Logo">
-      <p>Building for South Africa's Rising Wealth Class. Economic Empowerment &amp; Generational Wealth.</p>
+      <p>Building institutional wealth infrastructure for South Africa's established operators. Economic Empowerment &amp; Generational Governance.</p>
     </div>
     <div class="footer-col">
       <h3>Contact Us</h3>
@@ -416,12 +747,151 @@
 </footer>
 
 <script>
-  const hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay'),closeBtn=document.getElementById('sidebarClose');
-  const open=()=>{sidebar.classList.add('open');overlay.classList.add('active');hamburger.classList.add('open');document.body.style.overflow='hidden';};
-  const close=()=>{sidebar.classList.remove('open');overlay.classList.remove('active');hamburger.classList.remove('open');document.body.style.overflow='';};
-  hamburger.addEventListener('click',()=>sidebar.classList.contains('open')?close():open());
-  closeBtn.addEventListener('click',close);overlay.addEventListener('click',close);
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+/* ── SIDEBAR ─────────────────────────────── */
+const hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay'),closeBtn=document.getElementById('sidebarClose');
+const openSidebar=()=>{sidebar.classList.add('open');overlay.classList.add('active');hamburger.classList.add('open');document.body.style.overflow='hidden';};
+const closeSidebar=()=>{sidebar.classList.remove('open');overlay.classList.remove('active');hamburger.classList.remove('open');document.body.style.overflow='';};
+hamburger.addEventListener('click',()=>sidebar.classList.contains('open')?closeSidebar():openSidebar());
+closeBtn.addEventListener('click',closeSidebar);
+overlay.addEventListener('click',closeSidebar);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSidebar();closeAudit();}});
+
+/* ── AUDIT MODAL ─────────────────────────── */
+const QUESTIONS=[
+  {text:"How do you currently separate personal and business finances?",options:[{label:"Fully integrated — one account for all transactions.",pts:0},{label:"Mostly separate, with occasional mixing during cash flow pressures.",pts:1},{label:"Largely separate with internal controls and some formal boundaries.",pts:2},{label:"Fully separated through governance structures, audited accounts, and legal entity separation.",pts:3}]},
+  {text:"What governance structures are in place for significant business decisions?",options:[{label:"None — decisions are made informally as situations arise.",pts:0},{label:"Ad-hoc processes with limited documentation or accountability frameworks.",pts:1},{label:"Documented internal approval processes for material decisions.",pts:2},{label:"Institutional governance frameworks with board-level oversight and formal reporting structures.",pts:3}]},
+  {text:"How frequently do you review formal liquidity and cash flow projections?",options:[{label:"Never — liquidity is managed reactively as it arises.",pts:0},{label:"Occasionally, when a specific issue or opportunity demands it.",pts:1},{label:"Quarterly, through structured internal reviews.",pts:2},{label:"Monthly or continuously, with structured forecasting and advisory review.",pts:3}]},
+  {text:"To what degree are personal or extended family financial obligations drawing on business liquidity?",options:[{label:"Constantly — family obligations are the primary drain on available cash.",pts:0},{label:"Frequently — family requests are managed but consistently impact capital reserves.",pts:1},{label:"Occasionally — some structure exists but boundaries are not fully enforced.",pts:2},{label:"Rarely or never — formal boundary and obligation frameworks protect business liquidity.",pts:3}]},
+  {text:"How accessible is institutional capital to your business at present?",options:[{label:"Not at all — conventional and institutional capital channels are effectively closed.",pts:0},{label:"Limited — some banking relationships exist but institutional access is restricted.",pts:1},{label:"Moderate — relationships exist but governance gaps limit access to larger facilities.",pts:2},{label:"Fully integrated — institutional capital access exists through established governance and financial credibility.",pts:3}]},
+  {text:"Do you hold formal asset structures outside of your primary operating business?",options:[{label:"None — all personal and business assets remain fully integrated.",pts:0},{label:"Minimal — some personal property or investments held informally.",pts:1},{label:"Some formal separation — certain assets held in distinct structures.",pts:2},{label:"Full family-office-style asset separation with trust structures, legal entities, and governance oversight.",pts:3}]},
+  {text:"How are high-value capital allocations tracked and reviewed within your business?",options:[{label:"Not tracked — capital movements are managed informally.",pts:0},{label:"Informally tracked via spreadsheets or basic accounting tools.",pts:1},{label:"Structured ledger or accounting software with internal review.",pts:2},{label:"Audited, professionally reviewed, and reported through institutional-grade financial reporting.",pts:3}]},
+  {text:"Do you have succession or contingency plans governing business continuity?",options:[{label:"None — business continuity depends entirely on key individuals.",pts:0},{label:"Basic ideas or informal arrangements exist but remain undocumented.",pts:1},{label:"Documented plans exist for key operational roles.",pts:2},{label:"Comprehensive governance covering family wealth transfer, business continuity, and formal succession structures.",pts:3}]},
+  {text:"How consistently do you convert revenue into wealth-generating structures rather than operational consumption?",options:[{label:"Never — revenue is consumed entirely by operational demands and personal obligations.",pts:0},{label:"Rarely — occasional capital allocation occurs without a structured framework.",pts:1},{label:"Sometimes — capital conversion occurs when cash flow permits.",pts:2},{label:"Regularly — a defined capital conversion strategy aligned with long-term institutional wealth goals.",pts:3}]},
+  {text:"How would you assess your liquidity position and capital structure over the next 12 months?",options:[{label:"Not confident — significant structural vulnerabilities remain unaddressed.",pts:0},{label:"Slightly confident — basic cash flow management exists but structural exposure remains.",pts:1},{label:"Moderately confident — reasonable structure in place with identifiable gaps.",pts:2},{label:"Fully confident — liquidity is governed, stress-tested, and protected through formal structures.",pts:3}]}
+];
+
+const RESULTS={
+  tier0:{badge:"Revenue Dependent",cls:"tier-0",category:"Revenue Dependent",diagnostic:"Your diagnostic indicates that your enterprise is generating revenue without the structural architecture required to convert it into sustainable, transferable wealth. Liquidity fragility, governance gaps, and the absence of formal capital structures leave your position exposed to market cycles, family obligations, and institutional exclusion.",implication:"Strategic implication: Without intervention, revenue continues to be consumed rather than compounded. The gap between what you earn and what you retain widens over time — not from lack of effort, but from the absence of architecture."},
+  tier1:{badge:"Structurally Exposed",cls:"tier-1",category:"Operationally Strong, Structurally Exposed",diagnostic:"Your diagnostic reflects an operator with demonstrable business capability and revenue capacity — but with identifiable structural vulnerabilities in liquidity governance, capital architecture, and institutional access. Operational performance has outpaced wealth structuring.",implication:"Strategic implication: The infrastructure required to protect and compound what you have built remains incomplete. You are operating in a window where structured intervention can transition your position from revenue generation to institutional wealth realization."},
+  tier2:{badge:"Capital Ready",cls:"tier-2",category:"Capital Ready",diagnostic:"Your diagnostic reflects a structurally sophisticated operator — one with meaningful governance frameworks, some degree of personal and business separation, and an existing orientation toward institutional capital positioning. You are operating within the range EWC works with at the highest level of engagement.",implication:"Strategic implication: Capital readiness alone does not guarantee capital access. EWC's advisory engagement is designed to convert structural readiness into active institutional positioning — placing you into the capital networks your governance already qualifies you for."}
+};
+
+let current=0,answers=new Array(10).fill(null),totalScore=0;
+
+const modalBg=document.getElementById('auditModalBg');
+const quizView=document.getElementById('modalQuizView');
+const captureView=document.getElementById('modalCaptureView');
+const resultsView=document.getElementById('modalResultsView');
+const progressFill=document.getElementById('modalProgressFill');
+const progressLabel=document.getElementById('modalProgressLabel');
+const qLabel=document.getElementById('modalQLabel');
+const qText=document.getElementById('modalQText');
+const qOptions=document.getElementById('modalOptions');
+const btnBack=document.getElementById('modalBtnBack');
+const btnNext=document.getElementById('modalBtnNext');
+
+function openAudit(){
+  modalBg.classList.add('open');
+  document.body.style.overflow='hidden';
+  renderQ(current);
+}
+function closeAudit(){
+  modalBg.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.getElementById('openAuditBtn').addEventListener('click',openAudit);
+document.getElementById('modalClose').addEventListener('click',closeAudit);
+modalBg.addEventListener('click',e=>{if(e.target===modalBg)closeAudit();});
+
+function renderQ(idx){
+  const q=QUESTIONS[idx];
+  const pct=(idx/QUESTIONS.length)*100;
+  progressFill.style.width=pct+'%';
+  progressLabel.textContent='Question '+(idx+1)+' of '+QUESTIONS.length;
+  qLabel.textContent='Question '+String(idx+1).padStart(2,'0');
+  qText.textContent=q.text;
+  qOptions.innerHTML='';
+  q.options.forEach((opt,i)=>{
+    const d=document.createElement('div');
+    d.className='modal-option'+(answers[idx]===i?' selected':'');
+    d.innerHTML='<div class="modal-option-dot"></div><div class="modal-option-text">'+opt.label+'</div>';
+    d.addEventListener('click',()=>selectOpt(idx,i));
+    qOptions.appendChild(d);
+  });
+  btnBack.disabled=idx===0;
+  syncNextBtn(idx);
+  // scroll modal to top on question change
+  document.getElementById('auditModal').scrollTop=0;
+}
+
+function selectOpt(qIdx,optIdx){
+  answers[qIdx]=optIdx;
+  document.querySelectorAll('.modal-option').forEach((el,i)=>el.classList.toggle('selected',i===optIdx));
+  syncNextBtn(qIdx);
+}
+
+function syncNextBtn(idx){
+  const ready=answers[idx]!==null;
+  btnNext.classList.toggle('ready',ready);
+  btnNext.textContent=idx===QUESTIONS.length-1?'View Results →':'Continue →';
+}
+
+btnNext.addEventListener('click',()=>{
+  if(answers[current]===null)return;
+  if(current<QUESTIONS.length-1){current++;renderQ(current);}
+  else{showCapture();}
+});
+btnBack.addEventListener('click',()=>{if(current>0){current--;renderQ(current);}});
+
+function showCapture(){
+  totalScore=QUESTIONS.reduce((s,q,i)=>s+(answers[i]!==null?q.options[answers[i]].pts:0),0);
+  const cat=totalScore<=10?'Revenue Dependent':totalScore<=20?'Operationally Strong, Structurally Exposed':'Capital Ready';
+  document.getElementById('hiddenScore').value=totalScore+'/30';
+  document.getElementById('hiddenCategory').value=cat;
+  document.getElementById('hiddenAnswers').value=QUESTIONS.map((q,i)=>'Q'+(i+1)+': '+( answers[i]!==null?q.options[answers[i]].label:'—')+' ('+( answers[i]!==null?q.options[answers[i]].pts:0)+' pts)').join('\n');
+  progressFill.style.width='100%';
+  progressLabel.textContent='Diagnostic Complete';
+  quizView.style.display='none';
+  captureView.classList.add('active');
+  document.getElementById('auditModal').scrollTop=0;
+}
+
+document.getElementById('modalCaptureForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=e.target.querySelector('.capture-submit');
+  btn.textContent='Submitting…';btn.disabled=true;
+  try{
+    await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
+  }catch(err){console.warn(err);}
+  showResults();
+});
+
+function showResults(){
+  captureView.classList.remove('active');
+  resultsView.classList.add('active');
+  const r=totalScore<=10?RESULTS.tier0:totalScore<=20?RESULTS.tier1:RESULTS.tier2;
+  document.getElementById('resBadge').textContent=r.badge;
+  document.getElementById('resBadge').className='result-badge '+r.cls;
+  document.getElementById('resScore').textContent=totalScore;
+  document.getElementById('resCategory').textContent=r.category;
+  document.getElementById('resDiagnostic').textContent=r.diagnostic;
+  document.getElementById('resImplication').textContent=r.implication;
+  const bar=document.getElementById('resBarFill');
+  bar.className='result-bar-fill '+r.cls;
+  setTimeout(()=>{bar.style.width=Math.round((totalScore/30)*100)+'%';},100);
+  document.getElementById('auditModal').scrollTop=0;
+}
+
+document.getElementById('resRetake').addEventListener('click',()=>{
+  current=0;answers=new Array(10).fill(null);totalScore=0;
+  quizView.style.display='';
+  captureView.classList.remove('active');
+  resultsView.classList.remove('active');
+  document.getElementById('modalCaptureForm').reset();
+  document.getElementById('resBarFill').style.width='0%';
+  renderQ(0);
+});
 </script>
 </body>
 </html>
