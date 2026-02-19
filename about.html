@@ -9,26 +9,18 @@
     :root { --green: #7E9B75; --gold: #D6A24A; --brown: #9C5B2E; --cream: #F6F1E9; --dark: #2F2F2F; --white: #ffffff; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
-
-    /* HEADER & NAV */
     header { background: var(--white); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
     header img { height: 55px; }
     .desktop-nav { display: flex; align-items: center; }
     nav a { margin-left: 25px; text-decoration: none; color: var(--dark); font-weight: 500; position: relative; padding-bottom: 5px; transition: .3s ease; }
     nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0%; height: 2px; background: var(--gold); transition: .3s ease; }
-    nav a:hover { color: var(--gold); }
-    nav a:hover::after { width: 100%; }
-    nav a.active { color: var(--gold); font-weight: 600; }
-    nav a.active::after { width: 100%; }
-
-    /* HAMBURGER */
+    nav a:hover { color: var(--gold); } nav a:hover::after { width: 100%; }
+    nav a.active { color: var(--gold); font-weight: 600; } nav a.active::after { width: 100%; }
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; z-index: 301; background: none; border: none; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: .35s ease; transform-origin: center; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* SIDEBAR */
     .sidebar-overlay { position: fixed; inset: 0; background: rgba(47,47,47,.55); backdrop-filter: blur(4px); z-index: 299; opacity: 0; pointer-events: none; transition: opacity .35s ease; }
     .sidebar-overlay.active { opacity: 1; pointer-events: all; }
     .sidebar { position: fixed; top: 0; right: -340px; width: 300px; height: 100vh; background: var(--dark); z-index: 300; display: flex; flex-direction: column; transition: right .4s cubic-bezier(.4,0,.2,1); box-shadow: -10px 0 40px rgba(0,0,0,.25); }
@@ -44,25 +36,17 @@
     .sidebar-cta p { color: rgba(255,255,255,.45); font-size: 13px; margin-bottom: 14px; }
     .sidebar-cta a { display: block; text-align: center; background: var(--gold); color: var(--dark); padding: 13px 20px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 14px; transition: .3s ease; }
     .sidebar-cta a:hover { background: var(--brown); color: #fff; }
-
-    /* PAGE HERO */
     .page-hero { background: linear-gradient(rgba(47,47,47,.7), rgba(47,47,47,.7)), url("about.png") center/cover no-repeat; color: #fff; padding: 130px 8%; }
     .page-hero .hero-tag { display: inline-block; background: var(--gold); color: var(--dark); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 18px; border-radius: 30px; margin-bottom: 20px; }
     .page-hero h1 { font-family: 'Poppins', sans-serif; font-size: 46px; max-width: 700px; }
     .page-hero p { max-width: 580px; opacity: 0.8; margin-top: 16px; font-size: 17px; }
-
-    /* SECTIONS GENERAL */
     section { padding: 90px 8%; }
     .section-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
     .section-title { font-family: 'Poppins', sans-serif; font-size: 36px; color: var(--brown); margin-bottom: 20px; }
-
-    /* STORY */
     .story { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
     .story h2 { font-family: 'Poppins', sans-serif; font-size: 34px; color: var(--brown); margin-bottom: 20px; }
     .story p { max-width: 520px; font-size: 16px; color: #666; margin-bottom: 16px; }
     .story img { width: 100%; border-radius: 24px; height: 420px; object-fit: cover; }
-
-    /* MISSION & VISION */
     .mv-section { background: var(--dark); }
     .mv-section .section-label { color: var(--gold); }
     .mv-section .section-title { color: var(--white); }
@@ -71,8 +55,6 @@
     .mv-card span { font-size: 64px; font-weight: 700; color: var(--gold); opacity: 0.2; position: absolute; top: 20px; right: 30px; font-family: 'Poppins', sans-serif; line-height: 1; }
     .mv-card h3 { font-family: 'Poppins', sans-serif; font-size: 26px; margin-bottom: 15px; color: var(--gold); }
     .mv-card p { color: rgba(255,255,255,0.7); font-size: 16px; }
-
-    /* PSYCHOLOGY CONTRAST */
     .psychology-section { background: var(--white); }
     .psych-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; margin-top: 50px; }
     .psych-col { border-radius: 20px; padding: 40px; }
@@ -87,8 +69,6 @@
     .psych-col.vision .psych-item p { color: rgba(255,255,255,0.75); font-size: 15px; }
     .psych-vs { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--gold); text-align: center; }
     .shift-quote { background: var(--gold); padding: 24px 8%; text-align: center; font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; color: var(--dark); }
-
-    /* VALUES */
     .values-section { text-align: center; }
     .values-section .section-title { text-align: center; }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
@@ -98,8 +78,6 @@
     .value-icon img { width: 32px; height: 32px; filter: invert(1); }
     .value h4 { font-family: 'Poppins', sans-serif; margin-bottom: 10px; font-size: 18px; }
     .value p { font-size: 15px; color: #666; }
-
-    /* LEGACY */
     .legacy-section { background: linear-gradient(135deg, var(--brown), var(--dark)); }
     .legacy-section .section-label { color: var(--gold); }
     .legacy-section .section-title { color: #fff; }
@@ -110,7 +88,7 @@
     .legacy-item h4 { font-family: 'Poppins', sans-serif; color: var(--gold); margin-bottom: 6px; font-size: 16px; }
     .legacy-item p { color: rgba(255,255,255,0.65); font-size: 15px; }
 
-    /* CRITERIA — UPDATED */
+    /* A: Tiered revenue in criteria section */
     .criteria-card { background: var(--white); border-radius: 28px; padding: 60px; box-shadow: 0 15px 45px rgba(0,0,0,0.07); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
     .criteria-card h3 { font-family: 'Poppins', sans-serif; font-size: 28px; color: var(--brown); margin-bottom: 16px; }
     .criteria-card > div > p { color: #666; font-size: 16px; margin-bottom: 30px; }
@@ -120,13 +98,18 @@
     .criteria-list li img { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; }
     .criteria-list li strong { color: var(--dark); display: block; margin-bottom: 3px; }
     .criteria-list li span { color: #888; font-size: 14px; }
+    .tier-revenue-guide { background: var(--cream); border: 1px solid rgba(214,162,74,.2); border-radius: 14px; padding: 20px 22px; margin-top: 28px; }
+    .tier-revenue-guide-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .tier-revenue-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 14px; }
+    .tier-revenue-row:last-child { border-bottom: none; }
+    .tier-revenue-row .t-name { font-weight: 700; color: var(--dark); }
+    .tier-revenue-row .t-range { color: var(--brown); font-size: 13px; font-weight: 600; }
+
     .apply-cta { background: var(--gold); padding: 50px; border-radius: 20px; text-align: center; }
     .apply-cta h4 { font-family: 'Poppins', sans-serif; font-size: 24px; color: var(--dark); margin-bottom: 12px; }
     .apply-cta p { color: rgba(0,0,0,0.65); margin-bottom: 30px; font-size: 15px; }
     .btn-dark { display: inline-block; background: var(--dark); color: #fff; padding: 14px 34px; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; transition: 0.3s ease; }
     .btn-dark:hover { background: var(--brown); }
-
-    /* FOOTER */
     .footer { background: var(--dark); color: var(--cream); padding: 80px 8% 30px; position: relative; overflow: hidden; opacity: 0; transform: translateY(40px); animation: footerFade 1.2s ease forwards; }
     .footer::before { content: ""; position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: linear-gradient(90deg, var(--green), var(--gold), var(--brown)); background-size: 200% 200%; animation: gradientMove 6s linear infinite; }
     @keyframes footerFade { to { opacity: 1; transform: translateY(0); } }
@@ -141,57 +124,34 @@
     .footer-social a:hover { color: var(--gold); transform: scale(1.1); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 14px; color: var(--cream); }
     .footer-bottom a { display: inline; color: var(--gold); text-decoration: underline; }
-
-    /* RESPONSIVE */
     @media(max-width:900px){
-      .desktop-nav{display:none;}
-      .hamburger{display:flex;}
-      .page-hero{padding:90px 6% 70px;}
-      .page-hero h1{font-size:32px;}
-      .page-hero p{font-size:15px;}
-      section{padding:70px 6%;}
-      .shift-quote{padding:24px 6%;}
-      .story, .mv, .psych-compare, .values-grid, .legacy-grid, .criteria-card, .footer-container{grid-template-columns:1fr;}
-      .psych-vs{display:none;}
-      .story img{height:300px;margin-top:30px;}
-      .mv-card{padding:30px;}
-      .psych-col{padding:30px;}
-      .criteria-card{padding:40px 30px;}
-      .apply-cta{padding:30px;margin-top:30px;}
+      .desktop-nav{display:none;}.hamburger{display:flex;}
+      .page-hero{padding:90px 6% 70px;}.page-hero h1{font-size:32px;}.page-hero p{font-size:15px;}
+      section{padding:70px 6%;}.shift-quote{padding:24px 6%;}
+      .story,.mv,.psych-compare,.values-grid,.legacy-grid,.criteria-card,.footer-container{grid-template-columns:1fr;}
+      .psych-vs{display:none;}.story img{height:300px;margin-top:30px;}
+      .mv-card{padding:30px;}.psych-col{padding:30px;}
+      .criteria-card{padding:40px 30px;}.apply-cta{padding:30px;margin-top:30px;}
       .footer{padding:60px 6% 24px;}
     }
     @media(min-width:901px){.hamburger{display:none;}}
   </style>
 </head>
 <body>
-
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 <div class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <img src="logo.png" alt="EWC Logo">
-    <button class="sidebar-close" id="sidebarClose">✕</button>
-  </div>
+  <div class="sidebar-header"><img src="logo.png" alt="EWC Logo"><button class="sidebar-close" id="sidebarClose">✕</button></div>
   <nav class="sidebar-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="service.html">Services</a>
-    <a href="programme.html">Programs</a>
-    <a href="contact.html">Apply</a>
+    <a href="index.html">Home</a><a href="about.html" class="active">About</a>
+    <a href="service.html">Services</a><a href="programme.html">Programs</a><a href="contact.html">Apply</a>
   </nav>
-  <div class="sidebar-cta">
-    <p>Selective membership — established entrepreneurs only.</p>
-    <a href="contact.html">Begin Application</a>
-  </div>
+  <div class="sidebar-cta"><p>Selective membership — established entrepreneurs only.</p><a href="contact.html">Begin Application</a></div>
 </div>
-
 <header>
   <img src="logo.png" alt="EWC Logo">
   <nav class="desktop-nav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link active">About</a>
-    <a href="service.html" class="nav-link">Services</a>
-    <a href="programme.html" class="nav-link">Programs</a>
-    <a href="contact.html" class="nav-link">Apply</a>
+    <a href="index.html">Home</a><a href="about.html" class="active">About</a>
+    <a href="service.html">Services</a><a href="programme.html">Programs</a><a href="contact.html">Apply</a>
   </nav>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
@@ -202,7 +162,6 @@
   <p>EWC is a Wealth Realization Engine — an exclusive institutional ecosystem for established entrepreneurs built around capital access, family office governance, and a fundamental structural shift in African wealth.</p>
 </section>
 
-<!-- STORY -->
 <section class="story">
   <div>
     <p class="section-label">Who We Are</p>
@@ -214,125 +173,59 @@
   <img src="about-story.png" alt="Entrepreneur discussion">
 </section>
 
-<!-- MISSION & VISION -->
 <section class="mv-section">
   <p class="section-label">Our Purpose</p>
   <h2 class="section-title">Mission &amp; Vision</h2>
   <div class="mv">
-    <div class="mv-card">
-      <span>01</span>
-      <h3>Our Mission</h3>
-      <p>To equip South Africa's established operators with the capital access frameworks, wealth structuring systems, and governance infrastructure required to create, protect, and transfer institutional-grade wealth across generations — aligning capital with legacy intent.</p>
-    </div>
-    <div class="mv-card">
-      <span>02</span>
-      <h3>Our Vision</h3>
-      <p>A future where African entrepreneurs are not only financially successful — but institutionally positioned, governance-governed, and capable of building lasting wealth structures that withstand market cycles and transfer across generations.</p>
-    </div>
+    <div class="mv-card"><span>01</span><h3>Our Mission</h3><p>To equip South Africa's established operators with the capital access frameworks, wealth structuring systems, and governance infrastructure required to create, protect, and transfer institutional-grade wealth across generations — aligning capital with legacy intent.</p></div>
+    <div class="mv-card"><span>02</span><h3>Our Vision</h3><p>A future where African entrepreneurs are not only financially successful — but institutionally positioned, governance-governed, and capable of building lasting wealth structures that withstand market cycles and transfer across generations.</p></div>
   </div>
 </section>
 
-<!-- PSYCHOLOGY CONTRAST -->
 <section class="psychology-section">
   <p class="section-label">Our Philosophy</p>
   <h2 class="section-title">A New African Psychology of Wealth</h2>
   <div class="psych-compare">
     <div class="psych-col status">
       <h3>The Status Quo</h3>
-      <div class="psych-item">
-        <img src="https://img.icons8.com/ios/30/9C5B2E/car--v1.png" alt="car icon">
-        <p>Consumption-driven positioning. Lifestyle and appearance serve as the primary validation of entrepreneurial success.</p>
-      </div>
-      <div class="psych-item">
-        <img src="https://img.icons8.com/ios/30/9C5B2E/negative-dynamic--v1.png" alt="fragility icon">
-        <p>Revenue without architecture. Strong cash flow with no governance structure produces long-term fragility.</p>
-      </div>
-      <div class="psych-item">
-        <img src="https://img.icons8.com/ios/30/9C5B2E/shopping-cart--v1.png" alt="consumption icon">
-        <p>Capital consumed rather than structured into protected, compounding institutional assets.</p>
-      </div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/car--v1.png" alt="car icon"><p>Consumption-driven positioning. Lifestyle and appearance serve as the primary validation of entrepreneurial success.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/negative-dynamic--v1.png" alt="fragility icon"><p>Revenue without architecture. Strong cash flow with no governance structure produces long-term fragility.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/9C5B2E/shopping-cart--v1.png" alt="consumption icon"><p>Capital consumed rather than structured into protected, compounding institutional assets.</p></div>
     </div>
     <div class="psych-vs">VS</div>
     <div class="psych-col vision">
       <h3>The EWC Architecture</h3>
-      <div class="psych-item">
-        <img src="https://img.icons8.com/ios/30/D6A24A/positive-dynamic--v1.png" alt="pride icon">
-        <p>Institutional positioning. Asset-backed leverage, governance frameworks, and capital structures that compound.</p>
-      </div>
-      <div class="psych-item">
-        <img src="https://img.icons8.com/ios/30/D6A24A/family--v1.png" alt="family icon">
-        <p>Liquidity governance. Family obligations structured, boundaries enforced, and capital protected at source.</p>
-      </div>
-      <div class="psych-item">
-        <img src="https://img.icons8.com/ios/30/D6A24A/building--v1.png" alt="institution icon">
-        <p>Generational infrastructure. Wealth separated from business risk and governed for responsible succession.</p>
-      </div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/positive-dynamic--v1.png" alt="pride icon"><p>Institutional positioning. Asset-backed leverage, governance frameworks, and capital structures that compound.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/family--v1.png" alt="family icon"><p>Liquidity governance. Family obligations structured, boundaries enforced, and capital protected at source.</p></div>
+      <div class="psych-item"><img src="https://img.icons8.com/ios/30/D6A24A/building--v1.png" alt="institution icon"><p>Generational infrastructure. Wealth separated from business risk and governed for responsible succession.</p></div>
     </div>
   </div>
 </section>
 <div class="shift-quote">"From revenue generation to institutional wealth realization."</div>
 
-<!-- VALUES -->
 <section class="values-section">
   <p class="section-label">What We Stand For</p>
   <h2 class="section-title">Our Core Values</h2>
   <div class="values-grid">
-    <div class="value">
-      <div class="value-icon"><img src="https://img.icons8.com/ios/64/ffffff/checkmark--v1.png" alt="integrity"></div>
-      <h4>Integrity</h4>
-      <p>We operate with absolute transparency — in capital structures, institutional relationships, and the advisory we provide to every member.</p>
-    </div>
-    <div class="value">
-      <div class="value-icon"><img src="https://img.icons8.com/ios/64/ffffff/positive-dynamic--v1.png" alt="empowerment"></div>
-      <h4>Governance</h4>
-      <p>We believe structured, institutionally governed wealth outlasts any individual business cycle — and we build accordingly.</p>
-    </div>
-    <div class="value">
-      <div class="value-icon"><img src="https://img.icons8.com/ios/64/ffffff/family--v1.png" alt="legacy"></div>
-      <h4>Legacy</h4>
-      <p>We engineer generational wealth infrastructure — not short-term wins, but capital architectures with purpose that communities inherit.</p>
-    </div>
+    <div class="value"><div class="value-icon"><img src="https://img.icons8.com/ios/64/ffffff/checkmark--v1.png" alt="integrity"></div><h4>Integrity</h4><p>We operate with absolute transparency — in capital structures, institutional relationships, and the advisory we provide to every member.</p></div>
+    <div class="value"><div class="value-icon"><img src="https://img.icons8.com/ios/64/ffffff/positive-dynamic--v1.png" alt="empowerment"></div><h4>Governance</h4><p>We believe structured, institutionally governed wealth outlasts any individual business cycle — and we build accordingly.</p></div>
+    <div class="value"><div class="value-icon"><img src="https://img.icons8.com/ios/64/ffffff/family--v1.png" alt="legacy"></div><h4>Legacy</h4><p>We engineer generational wealth infrastructure — not short-term wins, but capital architectures with purpose that communities inherit.</p></div>
   </div>
 </section>
 
-<!-- LEGACY: WEALTH WITH PURPOSE -->
 <section class="legacy-section">
   <p class="section-label">Wealth with Purpose</p>
   <h2 class="section-title">Legacy Beyond the Balance Sheet</h2>
   <p class="section-sub">The objective is not profit in isolation. EWC is built to engineer institutional wealth that uplifts communities, restores trust, and creates a new standard for African entrepreneurial success.</p>
   <div class="legacy-grid">
-    <div class="legacy-item">
-      <img src="https://img.icons8.com/ios/28/D6A24A/building--v1.png" alt="community">
-      <div>
-        <h4>Communities Uplifted</h4>
-        <p>Business growth that translates directly into community upliftment and sustainable economic participation across South Africa.</p>
-      </div>
-    </div>
-    <div class="legacy-item">
-      <img src="https://img.icons8.com/ios/28/D6A24A/family--v1.png" alt="generational">
-      <div>
-        <h4>Generational Wealth Infrastructure</h4>
-        <p>Families that preserve and transfer governed wealth — with the structures, education, and discipline to execute it responsibly.</p>
-      </div>
-    </div>
-    <div class="legacy-item">
-      <img src="https://img.icons8.com/ios/28/D6A24A/handshake--v1.png" alt="trust">
-      <div>
-        <h4>Institutional Trust Restored</h4>
-        <p>Transparency and governance accountability that rebuilds faith in African business institutions and leadership.</p>
-      </div>
-    </div>
-    <div class="legacy-item">
-      <img src="https://img.icons8.com/ios/28/D6A24A/recurring-appointment--v1.png" alt="sustained">
-      <div>
-        <h4>Wealth Governed &amp; Transferred</h4>
-        <p>Wealth is not accumulated in isolation — it is governed, structured for succession, and transferred according to systems that survive the individual.</p>
-      </div>
-    </div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/building--v1.png" alt="community"><div><h4>Communities Uplifted</h4><p>Business growth that translates directly into community upliftment and sustainable economic participation across South Africa.</p></div></div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/family--v1.png" alt="generational"><div><h4>Generational Wealth Infrastructure</h4><p>Families that preserve and transfer governed wealth — with the structures, education, and discipline to execute it responsibly.</p></div></div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/handshake--v1.png" alt="trust"><div><h4>Institutional Trust Restored</h4><p>Transparency and governance accountability that rebuilds faith in African business institutions and leadership.</p></div></div>
+    <div class="legacy-item"><img src="https://img.icons8.com/ios/28/D6A24A/recurring-appointment--v1.png" alt="sustained"><div><h4>Wealth Governed &amp; Transferred</h4><p>Wealth is not accumulated in isolation — it is governed, structured for succession, and transferred according to systems that survive the individual.</p></div></div>
   </div>
 </section>
 
-<!-- MEMBERSHIP CRITERIA PREVIEW — UPDATED -->
+<!-- A: Tiered revenue guide added to criteria section -->
 <section class="criteria-section">
   <div class="criteria-card">
     <div>
@@ -340,49 +233,20 @@
       <h3>Membership Criteria</h3>
       <p>Access to the EWC ecosystem is selective and governed by strict admission criteria — ensuring the integrity of the network and the responsible deployment of capital. We partner exclusively with established operators who meet institutional standards.</p>
       <ul class="criteria-list">
-        <li>
-          <img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check">
-          <div>
-            <strong>Minimum Revenue Threshold</strong>
-            <span>R5M+ annual revenue — demonstrated capacity, not early-stage projection</span>
-          </div>
-        </li>
-        <li>
-          <img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check">
-          <div>
-            <strong>Business Tenure</strong>
-            <span>Minimum 2–3 years of continuous, verifiable operation</span>
-          </div>
-        </li>
-        <li>
-          <img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check">
-          <div>
-            <strong>Professional Operational Infrastructure</strong>
-            <span>Functioning commercial operation with professional systems and staffing — not a home-based or freelance structure</span>
-          </div>
-        </li>
-        <li>
-          <img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check">
-          <div>
-            <strong>Audit Trail &amp; Financial Documentation</strong>
-            <span>Full audited financial history — institutional capital access requires institutional financial credibility</span>
-          </div>
-        </li>
-        <li>
-          <img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check">
-          <div>
-            <strong>Governance Standards</strong>
-            <span>Compliance posture, board or advisory structure, and documented financial governance</span>
-          </div>
-        </li>
-        <li>
-          <img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check">
-          <div>
-            <strong>Strategic Growth Ambition</strong>
-            <span>A clear, institutional-grade growth trajectory — not lifestyle optimization, but systematic wealth architecture</span>
-          </div>
-        </li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"><div><strong>Minimum Revenue Threshold</strong><span>R5M+ annual revenue — demonstrated capacity, not early-stage projection</span></div></li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"><div><strong>Business Tenure</strong><span>Minimum 2–3 years of continuous, verifiable operation</span></div></li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"><div><strong>Professional Operational Infrastructure</strong><span>Functioning commercial operation with professional systems and staffing — not a home-based or freelance structure</span></div></li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"><div><strong>Audit Trail &amp; Financial Documentation</strong><span>Full audited financial history — institutional capital access requires institutional financial credibility</span></div></li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"><div><strong>Governance Standards</strong><span>Compliance posture, board or advisory structure, and documented financial governance</span></div></li>
+        <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"><div><strong>Strategic Growth Ambition</strong><span>A clear, institutional-grade growth trajectory — not lifestyle optimization, but systematic wealth architecture</span></div></li>
       </ul>
+      <!-- A: Ideal revenue per tier -->
+      <div class="tier-revenue-guide">
+        <div class="tier-revenue-guide-title">Ideal Member Revenue Profile per Tier</div>
+        <div class="tier-revenue-row"><span class="t-name">Gold</span><span class="t-range">R5M – R15M per annum</span></div>
+        <div class="tier-revenue-row"><span class="t-name">Platinum</span><span class="t-range">R15M – R50M per annum</span></div>
+        <div class="tier-revenue-row"><span class="t-name">Diamond</span><span class="t-range">R50M+ per annum</span></div>
+      </div>
     </div>
     <div class="apply-cta">
       <h4>Ready to Apply?</h4>
@@ -394,40 +258,13 @@
 
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-logo">
-      <img src="logo.png" alt="Entrepreneur Wealth Creation Logo">
-      <p>Building institutional wealth infrastructure for South Africa's established operators.</p>
-    </div>
-    <div>
-      <h3>Contact Us</h3>
-      <p>3rd Floor, 7 West Quay Road</p>
-      <p>Waterfront, Cape Town</p>
-      <p>+27 21 180 2936</p>
-      <p>info@entrepreneurwealthcreation.com</p>
-      <p>Mon–Fri: 9:00 AM – 5:00 PM</p>
-    </div>
-    <div>
-      <h3>Quick Links</h3>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="service.html">Services</a>
-      <a href="programme.html">Programs</a>
-      <a href="contact.html">Apply</a>
-    </div>
-    <div>
-      <h3>Follow Us</h3>
-      <div class="footer-social">
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">YouTube</a>
-      </div>
-    </div>
+    <div class="footer-logo"><img src="logo.png" alt="Entrepreneur Wealth Creation Logo"><p>Building institutional wealth infrastructure for South Africa's established operators.</p></div>
+    <div><h3>Contact Us</h3><p>3rd Floor, 7 West Quay Road</p><p>Waterfront, Cape Town</p><p>+27 21 180 2936</p><p>info@entrepreneurwealthcreation.com</p><p>Mon–Fri: 9:00 AM – 5:00 PM</p></div>
+    <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="service.html">Services</a><a href="programme.html">Programs</a><a href="contact.html">Apply</a></div>
+    <div><h3>Follow Us</h3><div class="footer-social"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div></div>
   </div>
-    <div class="footer-bottom">
-    Site by <a href="https://fergusonmedia.co.za" target="_blank">Ferguson Media</a>.
-  </div>
+  <div class="footer-bottom">Site by <a href="https://fergusonmedia.co.za" target="_blank">Ferguson Media</a>.</div>
 </footer>
-
 <script>
   const hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay'),closeBtn=document.getElementById('sidebarClose');
   const open=()=>{sidebar.classList.add('open');overlay.classList.add('active');hamburger.classList.add('open');document.body.style.overflow='hidden';};
