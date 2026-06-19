@@ -2,302 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Entrepreneur Wealth Creation | Programs &amp; Membership</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
-    :root{--green:#7E9B75;--gold:#D6A24A;--brown:#9C5B2E;--cream:#F6F1E9;--dark:#2F2F2F;--white:#ffffff;}
-    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.7;overflow-x:hidden;}
-    header{background:var(--white);padding:20px 8%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
-    header img{height:55px;}
-    .desktop-nav{display:flex;align-items:center;}
-    nav a{margin-left:25px;text-decoration:none;color:var(--dark);font-weight:500;position:relative;padding-bottom:5px;transition:.3s ease;}
-    nav a::after{content:"";position:absolute;left:0;bottom:0;width:0%;height:2px;background:var(--gold);transition:.3s ease;}
-    nav a:hover{color:var(--gold);}nav a:hover::after{width:100%;}
-    nav a.active{color:var(--gold);font-weight:600;}nav a.active::after{width:100%;}
-    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:4px;z-index:301;background:none;border:none;}
-    .hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:.35s ease;transform-origin:center;}
-    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
-    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .sidebar-overlay{position:fixed;inset:0;background:rgba(47,47,47,.55);backdrop-filter:blur(4px);z-index:299;opacity:0;pointer-events:none;transition:opacity .35s ease;}
-    .sidebar-overlay.active{opacity:1;pointer-events:all;}
-    .sidebar{position:fixed;top:0;right:-340px;width:300px;height:100vh;background:var(--dark);z-index:300;display:flex;flex-direction:column;transition:right .4s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,.25);}
-    .sidebar.open{right:0;}
-    .sidebar-header{padding:28px 30px 24px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;}
-    .sidebar-header img{height:40px;filter:brightness(0) invert(1);opacity:.85;}
-    .sidebar-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.5);font-size:22px;line-height:1;transition:color .2s;}
-    .sidebar-close:hover{color:var(--gold);}
-    .sidebar-nav{padding:30px 0;flex:1;}
-    .sidebar-nav a{display:flex;align-items:center;padding:14px 30px;text-decoration:none;color:rgba(255,255,255,.7);font-size:16px;font-weight:500;border-left:3px solid transparent;transition:.25s ease;}
-    .sidebar-nav a:hover,.sidebar-nav a.active{color:var(--gold);background:rgba(214,162,74,.06);border-left-color:var(--gold);}
-    .sidebar-cta{padding:24px 30px 36px;border-top:1px solid rgba(255,255,255,.08);}
-    .sidebar-cta p{color:rgba(255,255,255,.45);font-size:13px;margin-bottom:14px;}
-    .sidebar-cta a{display:block;text-align:center;background:var(--gold);color:var(--dark);padding:13px 20px;border-radius:30px;font-weight:700;text-decoration:none;font-size:14px;transition:.3s ease;}
-    .sidebar-cta a:hover{background:var(--brown);color:#fff;}
-    .page-hero{background:linear-gradient(rgba(47,47,47,.72),rgba(47,47,47,.72)),url("OneWater.png") center/cover no-repeat;color:#fff;padding:130px 8%;}
-    .page-hero .hero-tag{display:inline-block;background:rgba(214,162,74,.18);border:1px solid rgba(214,162,74,.45);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:28px;}
-    .page-hero h1{font-family:'Poppins',sans-serif;font-size:46px;max-width:700px;line-height:1.2;margin-bottom:16px;}
-    .page-hero p{max-width:580px;opacity:.8;font-size:17px;}
-    .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;}
-    .section-title{font-family:'Poppins',sans-serif;font-size:36px;color:var(--brown);margin-bottom:18px;}
-    .section-sub{max-width:700px;font-size:17px;color:#666;margin-bottom:54px;}
-    .tiers-section{background:var(--white);padding:90px 8%;}
-    .tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
-    .tier{border-radius:28px;padding:48px 36px;position:relative;transition:.4s ease;}
-    .tier.gold{background:var(--cream);border:2px solid rgba(214,162,74,.3);}
-    .tier.platinum{background:var(--dark);border:2px solid rgba(214,162,74,.25);}
-    .tier.diamond{background:var(--cream);border:2px solid rgba(156,91,46,.3);}
-    .tier:hover{transform:translateY(-8px);}
-    .tier-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:20px;white-space:nowrap;}
-    .tier-icon{width:64px;height:64px;object-fit:contain;margin-bottom:22px;}
-    .tier h3{font-family:'Poppins',sans-serif;font-size:24px;margin-bottom:6px;}
-    .tier.gold h3,.tier.diamond h3{color:var(--dark);}
-    .tier.platinum h3{color:#fff;}
-    .tier-focus{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
-
-    /* A: Ideal revenue badge */
-    .tier-ideal{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:18px;}
-    .tier.gold .tier-ideal,.tier.diamond .tier-ideal{background:rgba(126,155,117,.12);color:var(--green);}
-    .tier.platinum .tier-ideal{background:rgba(214,162,74,.1);color:var(--gold);}
-
-    .price{font-family:'Poppins',sans-serif;font-size:38px;font-weight:700;line-height:1;}
-    .tier.gold .price,.tier.diamond .price{color:var(--brown);}
-    .tier.platinum .price{color:var(--gold);}
-    .price-note{font-size:14px;color:#999;margin-bottom:20px;margin-top:4px;}
-    .tier.platinum .price-note{color:rgba(255,255,255,.4);}
-    .tier-desc{font-size:15px;line-height:1.7;margin-bottom:24px;}
-    .tier.gold .tier-desc,.tier.diamond .tier-desc{color:#666;}
-    .tier.platinum .tier-desc{color:rgba(255,255,255,.65);}
-    .deliverable-group{margin-bottom:20px;}
-    .deliverable-group-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:10px;display:inline-block;margin-bottom:10px;}
-    .tier.gold .deliverable-group-label,.tier.diamond .deliverable-group-label{background:rgba(214,162,74,.1);color:var(--brown);}
-    .tier.platinum .deliverable-group-label{background:rgba(214,162,74,.15);color:var(--gold);}
-    .tier ul{list-style:none;padding:0;margin-bottom:8px;}
-    .tier ul li{padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:15px;display:flex;align-items:flex-start;gap:12px;}
-    .tier.platinum ul li{border-bottom-color:rgba(255,255,255,.08);color:rgba(255,255,255,.82);}
-    .tier ul li img{width:18px;height:18px;flex-shrink:0;margin-top:2px;}
-    .tier-btn{display:block;text-align:center;padding:15px 30px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;transition:.3s ease;margin-top:28px;}
-    .tier.gold .tier-btn,.tier.diamond .tier-btn{border:2px solid var(--green);color:var(--green);}
-    .tier.gold .tier-btn:hover,.tier.diamond .tier-btn:hover{background:var(--green);color:#fff;}
-    .tier.platinum .tier-btn{background:var(--gold);color:var(--dark);border:2px solid var(--gold);}
-    .tier.platinum .tier-btn:hover{background:#c49040;border-color:#c49040;}
-    .family-callout{background:rgba(214,162,74,.08);border:1px solid rgba(214,162,74,.2);border-radius:14px;padding:16px 18px;margin-top:16px;}
-    .family-callout-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-    .tier.platinum .family-callout{background:rgba(214,162,74,.08);border-color:rgba(214,162,74,.2);}
-    .family-callout ul{margin-bottom:0;}
-    .family-callout ul li{border-bottom-color:rgba(214,162,74,.1)!important;font-size:14px;}
-    .family-callout ul li:last-child{border-bottom:none!important;}
-    .includes-section{background:var(--dark);padding:90px 8%;}
-    .includes-section .section-title{color:#fff;}
-    .includes-section .section-sub{color:rgba(255,255,255,.6);}
-    .includes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-    .include-item{background:rgba(255,255,255,.06);border-radius:16px;padding:28px;text-align:center;border:1px solid rgba(255,255,255,.08);transition:.3s ease;}
-    .include-item:hover{border-color:var(--gold);background:rgba(214,162,74,.08);}
-    .include-item img{width:40px;height:40px;margin-bottom:14px;}
-    .include-item h4{font-family:'Poppins',sans-serif;color:#fff;font-size:16px;margin-bottom:8px;}
-    .include-item p{color:rgba(255,255,255,.55);font-size:14px;}
-    .pillars-summary{padding:90px 8%;}
-    .pillars-row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
-    .pillar-mini{background:var(--white);border-radius:20px;padding:40px 30px;box-shadow:0 12px 35px rgba(0,0,0,.07);border-top:4px solid var(--gold);transition:.3s ease;}
-    .pillar-mini:nth-child(1){border-top-color:var(--green);}
-    .pillar-mini:nth-child(2){border-top-color:var(--gold);}
-    .pillar-mini:nth-child(3){border-top-color:var(--brown);}
-    .pillar-mini:hover{transform:translateY(-6px);}
-    .pillar-mini h3{font-family:'Poppins',sans-serif;font-size:20px;color:var(--dark);margin-bottom:14px;}
-    .pillar-mini p{font-size:15px;color:#666;margin-bottom:20px;}
-    .pillar-mini a{color:var(--green);font-weight:600;font-size:14px;text-decoration:none;}
-    .pillar-mini a:hover{color:var(--gold);}
-    .pillar-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px;background:rgba(126,155,117,.12);color:var(--green);}
-    .pillar-mini:nth-child(2) .pillar-tag{background:rgba(214,162,74,.12);color:var(--gold);}
-    .pillar-mini:nth-child(3) .pillar-tag{background:rgba(156,91,46,.12);color:var(--brown);}
-    .cta-wrap{padding:0 8% 90px;}
-    .cta{background:linear-gradient(135deg,var(--brown),var(--dark));border-radius:28px;padding:70px;text-align:center;}
-    .cta h2{font-family:'Poppins',sans-serif;font-size:36px;color:#fff;margin-bottom:16px;}
-    .cta p{color:rgba(255,255,255,.7);margin-bottom:36px;font-size:17px;max-width:600px;margin-left:auto;margin-right:auto;}
-    .btn{display:inline-block;background:var(--gold);color:var(--dark);padding:15px 36px;text-decoration:none;border-radius:30px;font-weight:700;font-size:15px;transition:.3s ease;}
-    .btn:hover{background:#c49040;transform:translateY(-2px);}
-    .footer{background:var(--dark);color:var(--cream);padding:80px 8% 30px;position:relative;overflow:hidden;}
-    .footer::before{content:"";position:absolute;top:0;left:0;height:4px;width:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--brown));background-size:200% 200%;animation:gradientMove 6s linear infinite;}
-    @keyframes gradientMove{0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
-    .footer-container{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:50px;}
-    .footer h3{font-family:'Poppins',sans-serif;margin-bottom:20px;font-size:18px;color:var(--gold);}
-    .footer p,.footer-col a{font-size:15px;color:var(--cream);text-decoration:none;margin-bottom:10px;display:block;transition:.3s ease;}
-    .footer-col a:hover{color:var(--gold);transform:translateX(5px);}
-    .footer-logo img{width:120px;margin-bottom:20px;}
-    .footer-logo p{max-width:260px;line-height:1.6;}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:50px;padding-top:20px;text-align:center;font-size:14px;color:var(--cream);}
-    .footer-bottom a{display:inline;color:var(--gold);text-decoration:underline;}
-    @media(max-width:900px){
-      .desktop-nav{display:none;}.hamburger{display:flex;}
-      .page-hero{padding:90px 6% 70px;}.page-hero h1{font-size:32px;}
-      .tiers-grid,.pillars-row,.includes-grid,.footer-container{grid-template-columns:1fr;}
-      .tiers-section,.includes-section,.pillars-summary,.cta-wrap{padding:70px 6%;}
-      .cta-wrap{padding:0 6% 70px;}.cta{padding:50px 30px;}
-      .footer{padding:60px 6% 24px;}.tier{padding:36px 24px;}
-    }
-    @media(min-width:901px){.hamburger{display:none;}}
-  </style>
+  <meta name="description" content="EWC Membership Programs — Gold, Platinum, and Diamond tiers of structured wealth architecture for South Africa's established operators. Transparent pricing and full deliverable breakdowns.">
+  <meta name="keywords" content="EWC programs, membership tiers, Gold Platinum Diamond, wealth architecture, institutional capital, South Africa entrepreneur membership">
+  <title>Entrepreneur Wealth Creation | Programs &amp; Membership</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="sidebar-overlay" id="sidebar_overlay"></div>
 <div class="sidebar" id="sidebar">
-  <div class="sidebar-header"><img src="logo.png" alt="EWC Logo"><button class="sidebar-close" id="sidebarClose">✕</button></div>
+  <div class="sidebar-header">
+    <a href="index.html" class="logo-link"><img src="assets/images/logo.webp" alt="EWC Logo" class="header-logo"></a>
+    <button class="sidebar-close" id="sidebar_close">✕</button>
+  </div>
   <nav class="sidebar-nav">
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="service.html">Services</a>
-    <a href="programme.html" class="active">Programs</a><a href="contact.html">Apply</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="programme.html" class="nav-link active">Programs</a>
+    <a href="contact.html" class="nav-link">Apply</a>
   </nav>
-  <div class="sidebar-cta"><p>Selective membership — established entrepreneurs only.</p><a href="contact.html">Begin Application</a></div>
+  <div class="sidebar-cta"><p>Selective membership. Established entrepreneurs only.</p><a href="contact.html">Begin Application</a></div>
 </div>
-<header>
-  <img src="logo.png" alt="EWC Logo">
+
+<header class="site-header">
+  <a href="index.html" class="logo-link"><img src="assets/images/logo.webp" alt="EWC Logo" class="header-logo"></a>
   <nav class="desktop-nav">
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="service.html">Services</a>
-    <a href="programme.html" class="active">Programs</a><a href="contact.html">Apply</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="programme.html" class="nav-link active">Programs</a>
+    <a href="contact.html" class="nav-link">Apply</a>
   </nav>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
-<section class="page-hero">
-  <div class="hero-tag">Structured Tiers of Engagement</div>
-  <h1>Wealth Architecture Programs</h1>
-  <p>Three structured membership tiers — each representing a distinct level of capital access, wealth structuring depth, and institutional positioning. All tiers are built on the EWC three-pillar framework and reviewed on application.</p>
+
+<section class="page-hero page-hero--programme">
+  <div class="hero-tag">Membership Tiers · Transparent Pricing · Full Deliverables</div>
+  <h1 class="hero-title">Structured Membership. Institutional Outcomes.</h1>
+  <p class="hero-desc">Three membership tiers, each calibrated to where you are and where you intend to go. No hidden structures, no opaque commitments. Full deliverables and transparent pricing, disclosed upfront.</p>
 </section>
 
 <section class="tiers-section">
-  <p class="section-label">Choose Your Level</p>
-  <h2 class="section-title">Structured Tiers of Engagement</h2>
-  <p class="section-sub">Pricing is disclosed transparently. EWC is a premium service — pricing reflects the depth of capital access, advisory infrastructure, and institutional positioning available at each level.</p>
-  <div class="tiers-grid">
+  <p class="section-label">Membership Architecture</p>
+  <h2 class="section-title">Choose Your Tier</h2>
+  <p class="section-sub">Each membership tier represents a distinct level of structural access, advisory depth, and capital positioning support. Pricing is transparent; EWC does not operate with concealed fee structures.</p>
 
-    <!-- GOLD -->
-    <div class="tier gold">
-      <img class="tier-icon" src="https://img.icons8.com/ios/76/D6A24A/medal--v1.png" alt="Gold">
+  <div class="tiers-grid-prog">
+
+    <div class="tier-card gold">
+      <img src="https://img.icons8.com/ios/64/D6A24A/medal--v1.png" alt="Gold" class="tier-icon">
       <h3>Gold</h3>
-      <span class="tier-focus">Wealth Architecture Entry</span>
-      <div class="tier-ideal">Ideal: R5M – R15M Revenue</div>
-      <div class="price">R12,500</div>
-      <div class="price-note">per month, billed monthly</div>
-      <p class="tier-desc">Entry into structured wealth architecture — designed for established operators ready to move from operational success into institutional wealth structuring, scalability systems, and private banking governance.</p>
+      <span class="tier-focus">Operational Scalability &amp; Wealth Structuring</span>
+      <span class="tier-ideal">Ideal: R5M – R15M Revenue</span>
+      <div class="tier-price">R12,500</div>
+      <div class="tier-price-note">per month</div>
+      <p class="tier-desc">Entry into structured wealth architecture, building the governance foundation, operational systems, and institutional positioning required to transition from revenue generation to protected, compounding wealth.</p>
+
       <div class="deliverable-group">
-        <span class="deliverable-group-label">Advisory &amp; Mentorship</span>
+        <div class="deliverable-group-label">Mentorship &amp; Strategy</div>
         <ul>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Structured Business Mentorship</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Operational Scalability Systems</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> EWC Institutional Network Access</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Monthly Executive Wealth Audit</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Quarterly Strategic Mentorship Reviews</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Wealth psychology and decision-making frameworks</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Peer advisory and accountability systems</li>
         </ul>
       </div>
+
       <div class="deliverable-group">
-        <span class="deliverable-group-label">Wealth Structuring</span>
+        <div class="deliverable-group-label">Operational Scalability</div>
         <ul>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Monthly Executive Wealth Audit</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Preferred Rate &amp; Priority Banking Structures</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Wealth Investment Framework Orientation</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Operational scalability system design</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">HR systems, financial controls, governance documentation</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Preferred rate private banking architecture</li>
         </ul>
       </div>
-      <a href="contact.html" class="tier-btn">Apply for Gold</a>
+
+      <div class="deliverable-group">
+        <div class="deliverable-group-label">Wealth Structuring</div>
+        <ul>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Personal and business financial separation framework</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Entry-level wealth protection architecture</li>
+          <li><img src="https://img.icons8.com/ios/18/7E9B75/checkmark--v1.png" alt="check">Tax efficiency planning introduction</li>
+        </ul>
+      </div>
+
+      <a href="contact.html" class="tier-btn">Apply for Gold Membership</a>
     </div>
 
-    <!-- PLATINUM -->
-    <div class="tier platinum">
-      <span class="tier-badge">Most Selected</span>
-      <img class="tier-icon" src="https://img.icons8.com/ios/76/D6A24A/trophy--v1.png" alt="Platinum">
+    <div class="tier-card platinum">
+      <div class="tier-badge">Most Selected</div>
+      <img src="https://img.icons8.com/ios/64/D6A24A/diamond--v1.png" alt="Platinum" class="tier-icon">
       <h3>Platinum</h3>
-      <span class="tier-focus">Capital Access &amp; Governance</span>
-      <div class="tier-ideal">Ideal: R15M – R50M Revenue</div>
-      <div class="price">R25,000</div>
-      <div class="price-note">per month, billed monthly</div>
-      <p class="tier-desc">For operators ready to access institutional capital, build governance frameworks, and establish the structural protections required to scale — and protect — serious wealth.</p>
+      <span class="tier-focus">Capital Raising, Governance &amp; Family Protection</span>
+      <span class="tier-ideal">Ideal: R15M – R50M Revenue</span>
+      <div class="tier-price">R25,000</div>
+      <div class="tier-price-note">per month</div>
+      <p class="tier-desc">Full capital access framework: governance architecture, family obligation management, liquidity protection, and institutional capital positioning for serious operators ready for the next structural level.</p>
+
       <div class="deliverable-group">
-        <span class="deliverable-group-label">Capital &amp; Banking</span>
+        <div class="deliverable-group-label">Capital Access</div>
         <ul>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Premium Mentorship &amp; Strategic Advisory</li>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Capital Raising &amp; Institutional Funding Networks</li>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Trust &amp; Tax Engineering</li>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Private Banking Tailored to Operators</li>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Access to Transformation Capital Networks</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Institutional capital access framework</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Blended capital facility structuring</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Governance architecture for capital qualification</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Asset-backed leverage positioning</li>
         </ul>
       </div>
+
+      <div class="deliverable-group">
+        <div class="deliverable-group-label">Governance &amp; Family</div>
+        <ul>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Family obligation management framework</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Liquidity protection systems</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Trust and tax engineering (entry-level)</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Board and advisory governance design</li>
+        </ul>
+      </div>
+
+      <div class="deliverable-group">
+        <div class="deliverable-group-label">All Gold Deliverables Plus</div>
+        <ul>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">All Gold Tier deliverables included</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Dedicated wealth advisory access</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/checkmark--v1.png" alt="check">Bi-monthly executive strategic reviews</li>
+        </ul>
+      </div>
+
       <div class="family-callout">
-        <div class="family-callout-title">Family Governance &amp; Protection</div>
+        <div class="family-callout-title">Family Governance Components</div>
         <ul>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Family Governance &amp; Boundary Structuring</li>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Liquidity Protection Frameworks</li>
-          <li><img src="https://img.icons8.com/ios/20/D6A24A/checkmark--v1.png" alt="check"> Extended Family Obligation Modeling</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/family--v1.png" alt="family">Family boundary and obligation modeling</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/family--v1.png" alt="family">Entry-level succession framework design</li>
+          <li><img src="https://img.icons8.com/ios/18/D6A24A/family--v1.png" alt="family">Family wealth education framework</li>
         </ul>
       </div>
-      <a href="contact.html" class="tier-btn">Apply for Platinum</a>
+
+      <a href="contact.html" class="tier-btn">Apply for Platinum Membership</a>
     </div>
 
-    <!-- DIAMOND -->
-    <div class="tier diamond">
-      <img class="tier-icon" src="https://img.icons8.com/ios/76/9C5B2E/diamond--v1.png" alt="Diamond">
+    <div class="tier-card diamond">
+      <img src="https://img.icons8.com/ios/64/9C5B2E/diamond--v1.png" alt="Diamond" class="tier-icon">
       <h3>Diamond</h3>
-      <span class="tier-focus">Private Family Office</span>
-      <div class="tier-ideal">Ideal: R50M+ Revenue</div>
-      <div class="price">R50,000</div>
-      <div class="price-note">per month, billed monthly</div>
-      <p class="tier-desc">The most comprehensive tier — a full private family office architecture delivering generational governance, advanced wealth management, and complete structural protection for established wealth.</p>
+      <span class="tier-focus">Full Family Office &amp; Generational Governance</span>
+      <span class="tier-ideal">Ideal: R50M+ Revenue</span>
+      <div class="tier-price">R50,000</div>
+      <div class="tier-price-note">per month</div>
+      <p class="tier-desc">Complete private family office infrastructure: advanced wealth management, family governance and boundary structuring, extended obligation modeling, private equity positioning, and full generational transfer architecture.</p>
+
       <div class="deliverable-group">
-        <span class="deliverable-group-label">Family Office Infrastructure</span>
+        <div class="deliverable-group-label">Private Family Office</div>
         <ul>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Full Private Family Office Set-Up</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Advanced Wealth Management Architecture</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Legacy &amp; Generational Transfer Planning</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Private Equity Access &amp; Positioning</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Strategic Capital Management</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Full private family office infrastructure</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Advanced trust structures and legal entity separation</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Multi-generational succession architecture</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Extended family obligation and boundary frameworks</li>
         </ul>
       </div>
-      <div class="family-callout">
-        <div class="family-callout-title">Generational Governance Systems</div>
+
+      <div class="deliverable-group">
+        <div class="deliverable-group-label">Capital &amp; Investment</div>
         <ul>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Family Governance &amp; Boundary Structuring</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Liquidity Protection Frameworks</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Extended Family Obligation Modeling</li>
-          <li><img src="https://img.icons8.com/ios/20/7E9B75/checkmark--v1.png" alt="check"> Next-Generation Financial Governance Education</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Private equity positioning and investment advisory</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Advanced tax engineering and wealth optimization</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Full institutional capital access suite</li>
         </ul>
       </div>
-      <a href="contact.html" class="tier-btn">Apply for Diamond</a>
+
+      <div class="deliverable-group">
+        <div class="deliverable-group-label">All Platinum Deliverables Plus</div>
+        <ul>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">All Platinum Tier deliverables included</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Dedicated executive advisory team access</li>
+          <li><img src="https://img.icons8.com/ios/18/9C5B2E/checkmark--v1.png" alt="check">Monthly one-on-one strategic wealth sessions</li>
+        </ul>
+      </div>
+
+      <a href="contact.html" class="tier-btn">Apply for Diamond Membership</a>
     </div>
 
   </div>
 </section>
 
 <section class="includes-section">
-  <p class="section-label">Ecosystem Benefits</p>
+  <p class="section-label">Core Inclusions</p>
   <h2 class="section-title">All Tiers Include</h2>
-  <p class="section-sub">Every EWC member benefits from the core institutional infrastructure regardless of tier selection.</p>
+  <p class="section-sub">Foundational wealth architecture components available across all membership levels.</p>
   <div class="includes-grid">
-    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/user-male-circle--v1.png" alt="mentorship"><h4>Mentorship Access</h4><p>Structured mentorship from experienced operators and institutional advisors.</p></div>
-    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/consultation--v1.png" alt="advice"><h4>Strategic Advisory</h4><p>Specialized advisory across capital strategy, governance, and operational architecture.</p></div>
-    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/accounting--v1.png" alt="tax"><h4>Tax Structuring</h4><p>Tax-efficient structures to protect and compound wealth through legitimate institutional frameworks.</p></div>
-    <div class="include-item"><img src="https://img.icons8.com/ios/40/D6A24A/positive-dynamic--v1.png" alt="investment"><h4>Wealth Investment Frameworks</h4><p>Access to institutional-grade wealth investment principles and positioning frameworks.</p></div>
+    <div class="include-item">
+      <img src="https://img.icons8.com/ios/40/D6A24A/positive-dynamic--v1.png" alt="mentorship">
+      <h4>Strategic Mentorship</h4>
+      <p>Structured access to high-calibre advisory intelligence across capital, governance, and wealth architecture domains.</p>
+    </div>
+    <div class="include-item">
+      <img src="https://img.icons8.com/ios/40/D6A24A/investment-portfolio--v1.png" alt="wealth">
+      <h4>Wealth Investment Frameworks</h4>
+      <p>Structured frameworks for capital deployment, asset class selection, and long-term wealth compounding strategy.</p>
+    </div>
+    <div class="include-item">
+      <img src="https://img.icons8.com/ios/40/D6A24A/certificate--v1.png" alt="tax">
+      <h4>Tax Structuring</h4>
+      <p>Tax efficiency optimization aligned with operational structure, wealth architecture, and institutional capital positioning.</p>
+    </div>
+    <div class="include-item">
+      <img src="https://img.icons8.com/ios/40/D6A24A/building--v1.png" alt="network">
+      <h4>Institutional Network Access</h4>
+      <p>Preferential access to EWC's institutional capital, banking, and advisory network under confidentiality agreement.</p>
+    </div>
   </div>
 </section>
 
 <section class="pillars-summary">
-  <p class="section-label">Our Framework</p>
-  <h2 class="section-title">The Three Pillars Behind Every Programme</h2>
-  <p class="section-sub">All EWC programmes are built on three interconnected wealth architecture systems — mentorship, capital, and governance.</p>
+  <p class="section-label">The Three Pillars</p>
+  <h2 class="section-title">Service Architecture Summary</h2>
   <div class="pillars-row">
-    <div class="pillar-mini"><span class="pillar-tag">Pillar 1</span><h3>Strategic Mentorship &amp; Resilience</h3><p>Psychological fortitude and structured frameworks for navigating high-stakes capital decisions, governance challenges, and growth phases.</p><a href="service.html">Learn more →</a></div>
-    <div class="pillar-mini"><span class="pillar-tag">Pillar 2</span><h3>Access to a R1–R3 Billion Institutional Capital Pool</h3><p>Structured pathways into institutional capital through governance architecture, accountability frameworks, and financial credibility systems.</p><a href="service.html">Learn more →</a></div>
-    <div class="pillar-mini"><span class="pillar-tag">Pillar 3</span><h3>Family Office &amp; Generational Governance</h3><p>Trust structures, family governance systems, succession planning, and investment growth architectures that protect personal wealth from business volatility.</p><a href="service.html">Learn more →</a></div>
+    <div class="pillar-mini">
+      <span class="pillar-tag">Pillar 1</span>
+      <h3>Strategic Mentorship</h3>
+      <p>Executive accountability, psychological resilience, and structured decision-making for high-stakes capital environments.</p>
+      <a href="service.html">Explore Pillar 1 →</a>
+    </div>
+    <div class="pillar-mini">
+      <span class="pillar-tag">Pillar 2</span>
+      <h3>Institutional Capital</h3>
+      <p>Governance architecture and institutional credibility frameworks that open access to South Africa's R1–R3 billion institutional capital ecosystem.</p>
+      <a href="service.html">Explore Pillar 2 →</a>
+    </div>
+    <div class="pillar-mini">
+      <span class="pillar-tag">Pillar 3</span>
+      <h3>Family Office Governance</h3>
+      <p>Complete family office infrastructure: trust, succession, obligation modeling, and generational wealth transfer architecture.</p>
+      <a href="service.html">Explore Pillar 3 →</a>
+    </div>
   </div>
 </section>
 
 <div class="cta-wrap">
-  <div class="cta">
-    <h2>Ready to Apply?</h2>
-    <p>Membership is selective. Applications are reviewed individually to ensure alignment between the operator and the EWC ecosystem before an engagement begins.</p>
-    <a href="contact.html" class="btn">Begin Your Application</a>
+  <div class="cta-block">
+    <h2>Begin Your Membership Application</h2>
+    <p>Membership is selective and governed by strict admission criteria. The application is the first step, reviewed by our advisory team before any engagement commences.</p>
+    <a href="contact.html" class="btn-cta">Start Your Application</a>
   </div>
 </div>
 
-<footer class="footer">
+<footer class="site-footer">
   <div class="footer-container">
     <div class="footer-logo footer-col">
-      <img src="logo.png" alt="Entrepreneur Wealth Creation Logo">
+      <a href="index.html" class="logo-link"><img src="assets/images/logo.webp" alt="Entrepreneur Wealth Creation Logo" class="footer-logo-img"></a>
       <p>Building institutional wealth infrastructure for South Africa's established operators. Economic Empowerment &amp; Generational Governance.</p>
     </div>
     <div class="footer-col">
@@ -322,16 +276,10 @@
     </div>
   </div>
   <div class="footer-bottom">
-    Site by <a href="https://fergusonmedia.co.za" target="_blank">Ferguson Media</a>.
+    Site by <a href="https://fergusonmedia.co.za" target="_blank" rel="noopener noreferrer">Ferguson Media</a>.
   </div>
 </footer>
-<script>
-  const hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay'),closeBtn=document.getElementById('sidebarClose');
-  const open=()=>{sidebar.classList.add('open');overlay.classList.add('active');hamburger.classList.add('open');document.body.style.overflow='hidden';};
-  const close=()=>{sidebar.classList.remove('open');overlay.classList.remove('active');hamburger.classList.remove('open');document.body.style.overflow='';};
-  hamburger.addEventListener('click',()=>sidebar.classList.contains('open')?close():open());
-  closeBtn.addEventListener('click',close);overlay.addEventListener('click',close);
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-</script>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

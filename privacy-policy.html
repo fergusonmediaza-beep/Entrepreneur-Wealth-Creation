@@ -3,301 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | Entrepreneur Wealth Creation</title>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap');
-
-    :root {
-      --green: #7E9B75;
-      --gold:  #D6A24A;
-      --brown: #9C5B2E;
-      --cream: #F6F1E9;
-      --dark:  #2F2F2F;
-      --white: #ffffff;
-    }
-
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
-
-    /* HEADER */
-    header { background: var(--white); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-    header img { height: 55px; }
-    .desktop-nav { display: flex; align-items: center; }
-    nav a { margin-left: 25px; text-decoration: none; color: var(--dark); font-weight: 500; position: relative; padding-bottom: 5px; transition: .3s ease; }
-    nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0%; height: 2px; background: var(--gold); transition: .3s ease; }
-    nav a:hover { color: var(--gold); }
-    nav a:hover::after { width: 100%; }
-
-    /* HAMBURGER */
-    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; z-index: 301; background: none; border: none; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: .35s ease; transform-origin: center; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* SIDEBAR */
-    .sidebar-overlay { position: fixed; inset: 0; background: rgba(47,47,47,.55); backdrop-filter: blur(4px); z-index: 299; opacity: 0; pointer-events: none; transition: opacity .35s ease; }
-    .sidebar-overlay.active { opacity: 1; pointer-events: all; }
-    .sidebar { position: fixed; top: 0; right: -340px; width: 300px; height: 100vh; background: var(--dark); z-index: 300; display: flex; flex-direction: column; transition: right .4s cubic-bezier(.4,0,.2,1); box-shadow: -10px 0 40px rgba(0,0,0,.25); }
-    .sidebar.open { right: 0; }
-    .sidebar-header { padding: 28px 30px 24px; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: space-between; }
-    .sidebar-header img { height: 40px; filter: brightness(0) invert(1); opacity: .85; }
-    .sidebar-close { background: none; border: none; cursor: pointer; color: rgba(255,255,255,.5); font-size: 22px; line-height: 1; transition: color .2s; }
-    .sidebar-close:hover { color: var(--gold); }
-    .sidebar-nav { padding: 30px 0; flex: 1; }
-    .sidebar-nav a { display: flex; align-items: center; padding: 14px 30px; text-decoration: none; color: rgba(255,255,255,.7); font-size: 16px; font-weight: 500; border-left: 3px solid transparent; transition: .25s ease; }
-    .sidebar-nav a:hover { color: var(--gold); background: rgba(214,162,74,.06); border-left-color: var(--gold); }
-    .sidebar-cta { padding: 24px 30px 36px; border-top: 1px solid rgba(255,255,255,.08); }
-    .sidebar-cta p { color: rgba(255,255,255,.45); font-size: 13px; margin-bottom: 14px; }
-    .sidebar-cta a { display: block; text-align: center; background: var(--gold); color: var(--dark); padding: 13px 20px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 14px; transition: .3s ease; }
-    .sidebar-cta a:hover { background: var(--brown); color: #fff; }
-
-    /* HERO */
-    .page-hero { background: linear-gradient(rgba(47,47,47,.75), rgba(47,47,47,.75)), url("contact-hero.png") center/cover no-repeat; color: #fff; padding: 110px 8% 90px; }
-    .page-hero .hero-tag { display: inline-block; background: rgba(214,162,74,.18); border: 1px solid rgba(214,162,74,.45); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 18px; border-radius: 30px; margin-bottom: 24px; }
-    .page-hero h1 { font-family: 'Poppins', sans-serif; font-size: 42px; max-width: 700px; line-height: 1.2; margin-bottom: 16px; }
-    .page-hero p { max-width: 560px; opacity: .82; font-size: 16px; }
-
-    /* CONTENT */
-    .privacy-section { padding: 80px 8%; }
-    .privacy-wrapper { display: grid; grid-template-columns: 220px 1fr; gap: 60px; align-items: start; }
-
-    /* STICKY NAV */
-    .privacy-nav { position: sticky; top: 100px; background: var(--white); border-radius: 18px; padding: 28px 24px; box-shadow: 0 8px 28px rgba(0,0,0,.06); }
-    .privacy-nav h4 { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .privacy-nav a { display: block; font-size: 13px; color: #777; text-decoration: none; padding: 7px 0; border-left: 2px solid transparent; padding-left: 12px; transition: .2s ease; margin-bottom: 2px; }
-    .privacy-nav a:hover { color: var(--brown); border-left-color: var(--gold); }
-
-    /* CONTENT BODY */
-    .privacy-content { max-width: 760px; }
-    .privacy-content .last-updated { font-size: 13px; color: #aaa; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,.08); }
-
-    .privacy-block { margin-bottom: 52px; scroll-margin-top: 120px; }
-    .privacy-block h2 { font-family: 'Poppins', sans-serif; font-size: 22px; color: var(--brown); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-    .privacy-block h2 .block-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(214,162,74,0.12); border: 1px solid rgba(214,162,74,0.3); font-size: 12px; font-weight: 700; color: var(--gold); flex-shrink: 0; font-family: 'Inter', sans-serif; }
-    .privacy-block p { font-size: 15px; color: #555; margin-bottom: 14px; line-height: 1.8; }
-    .privacy-block p:last-child { margin-bottom: 0; }
-    .privacy-block ul { margin: 12px 0 14px 0; padding-left: 0; list-style: none; }
-    .privacy-block ul li { font-size: 15px; color: #555; padding: 6px 0 6px 22px; position: relative; line-height: 1.7; }
-    .privacy-block ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); opacity: 0.7; }
-
-    /* HIGHLIGHT BOX */
-    .highlight-box { background: var(--dark); border-radius: 16px; padding: 24px 28px; margin: 24px 0; display: flex; gap: 16px; align-items: flex-start; }
-    .highlight-box .icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-    .highlight-box p { color: rgba(255,255,255,.78); font-size: 14px; line-height: 1.7; margin: 0; }
-    .highlight-box strong { color: var(--gold); }
-
-    /* CONTACT CARD */
-    .contact-card { background: var(--white); border-radius: 18px; padding: 28px 32px; box-shadow: 0 8px 28px rgba(0,0,0,.06); border-left: 4px solid var(--gold); margin-top: 24px; }
-    .contact-card p { font-size: 15px; color: #555; margin-bottom: 8px; }
-    .contact-card a { color: var(--brown); text-decoration: none; font-weight: 500; }
-    .contact-card a:hover { color: var(--gold); }
-
-    /* FOOTER */
-    .footer { background: var(--dark); color: var(--cream); padding: 80px 8% 30px; position: relative; overflow: hidden; }
-    .footer::before { content: ""; position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: linear-gradient(90deg, var(--green), var(--gold), var(--brown)); background-size: 200% 200%; animation: gradientMove 6s linear infinite; }
-    @keyframes gradientMove { 0%{background-position:0% 50%;} 100%{background-position:100% 50%;} }
-    .footer-container { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 50px; }
-    .footer h3 { font-family: 'Poppins', sans-serif; margin-bottom: 20px; font-size: 18px; color: var(--gold); }
-    .footer p, .footer-col a { font-size: 15px; color: var(--cream); text-decoration: none; margin-bottom: 10px; display: block; transition: .3s ease; }
-    .footer-col a:hover { color: var(--gold); transform: translateX(5px); }
-    .footer-logo img { width: 120px; margin-bottom: 20px; }
-    .footer-logo p { max-width: 260px; line-height: 1.6; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 14px; color: var(--cream); }
-    .footer-bottom a { display: inline; color: var(--gold); text-decoration: underline; }
-
-    /* RESPONSIVE */
-    @media(max-width: 900px) {
-      .desktop-nav { display: none; }
-      .hamburger { display: flex; }
-      .page-hero { padding: 80px 6% 60px; }
-      .page-hero h1 { font-size: 28px; }
-      .privacy-section { padding: 60px 6%; }
-      .privacy-wrapper { grid-template-columns: 1fr; }
-      .privacy-nav { position: static; }
-      .footer-container { grid-template-columns: 1fr; }
-      .footer { padding: 60px 6% 24px; }
-    }
-    @media(min-width: 901px) { .hamburger { display: none; } }
-  </style>
+  <meta name="description" content="EWC Privacy Policy — How Entrepreneur Wealth Creation collects, uses, and protects your personal information in compliance with POPIA and applicable South African data protection law.">
+  <meta name="keywords" content="EWC privacy policy, entrepreneur wealth creation data protection, POPIA, personal information, South Africa privacy">
+  <title>Entrepreneur Wealth Creation | Privacy Policy</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-<!-- SIDEBAR & OVERLAY -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar-overlay" id="sidebar_overlay"></div>
 <div class="sidebar" id="sidebar">
   <div class="sidebar-header">
-    <img src="logo.png" alt="EWC Logo">
-    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="logo-link"><img src="assets/images/logo.webp" alt="EWC Logo" class="header-logo"></a>
+    <button class="sidebar-close" id="sidebar_close">✕</button>
   </div>
   <nav class="sidebar-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="service.html">Services</a>
-    <a href="programme.html">Programs</a>
-    <a href="contact.html">Apply</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="programme.html" class="nav-link">Programs</a>
+    <a href="contact.html" class="nav-link">Apply</a>
   </nav>
-  <div class="sidebar-cta">
-    <p>Selective membership — established entrepreneurs only.</p>
-    <a href="contact.html">Begin Application</a>
-  </div>
+  <div class="sidebar-cta"><p>Selective membership. Established entrepreneurs only.</p><a href="contact.html">Begin Application</a></div>
 </div>
 
-<!-- HEADER -->
-<header>
-  <img src="logo.png" alt="EWC Logo">
+<header class="site-header">
+  <a href="index.html" class="logo-link"><img src="assets/images/logo.webp" alt="EWC Logo" class="header-logo"></a>
   <nav class="desktop-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="service.html">Services</a>
-    <a href="programme.html">Programs</a>
-    <a href="contact.html">Apply</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="programme.html" class="nav-link">Programs</a>
+    <a href="contact.html" class="nav-link">Apply</a>
   </nav>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
-<!-- HERO -->
-<section class="page-hero">
-  <div class="hero-tag">Legal &amp; Compliance</div>
-  <h1>Privacy Policy</h1>
-  <p>How Entrepreneur Wealth Creation collects, uses, and protects the information you provide through our website and membership application.</p>
+<section class="page-hero page-hero--privacy">
+  <div class="hero-tag">Legal · Privacy · Data Protection</div>
+  <h1 class="hero-title">Privacy Policy</h1>
+  <p class="hero-desc">How we collect, use, and protect your personal information, in compliance with POPIA and applicable South African data protection law.</p>
 </section>
 
-<!-- CONTENT -->
 <section class="privacy-section">
   <div class="privacy-wrapper">
 
-    <!-- STICKY SIDE NAV -->
-    <aside class="privacy-nav">
+    <nav class="privacy-nav">
       <h4>Contents</h4>
-      <a href="#information-we-collect">Information We Collect</a>
-      <a href="#how-we-use">How We Use It</a>
-      <a href="#emailjs">EmailJS &amp; Transmission</a>
-      <a href="#data-sharing">Data Sharing</a>
-      <a href="#data-retention">Data Retention</a>
-      <a href="#your-rights">Your Rights</a>
-      <a href="#security">Security</a>
-      <a href="#cookies">Cookies</a>
-      <a href="#contact">Contact Us</a>
-    </aside>
+      <a href="#information_we_collect">1. Information We Collect</a>
+      <a href="#how_we_use">2. How We Use It</a>
+      <a href="#emailjs">3. EmailJS</a>
+      <a href="#data_sharing">4. Data Sharing</a>
+      <a href="#data_retention">5. Data Retention</a>
+      <a href="#your_rights">6. Your Rights</a>
+      <a href="#security">7. Security</a>
+      <a href="#cookies">8. Cookies</a>
+      <a href="#contact">9. Contact Us</a>
+    </nav>
 
-    <!-- MAIN CONTENT -->
     <div class="privacy-content">
-      <p class="last-updated">Last updated: 18 February 2026 &nbsp;·&nbsp; Entrepreneur Wealth Creation (Pty) Ltd, Cape Town, South Africa</p>
+      <p class="last-updated">Last updated: 1 January 2025 &nbsp;·&nbsp; Applies to all EWC digital properties</p>
 
-      <!-- 1 -->
-      <div class="privacy-block" id="information-we-collect">
+      <div class="privacy-block" id="information_we_collect">
         <h2><span class="block-num">1</span> Information We Collect</h2>
-        <p>When you submit a membership application through our website, we collect the following information:</p>
+        <p>Entrepreneur Wealth Creation (EWC) collects personal information that you voluntarily provide when you interact with our website, complete our membership application form, or otherwise engage with our services. This may include:</p>
         <ul>
-          <li>Registered company name and primary business sector</li>
-          <li>Years in operation and annual revenue range</li>
-          <li>Availability of audited financial statements</li>
-          <li>CEO or founder's full name and title</li>
-          <li>Business email address and company website URL</li>
-          <li>Company overview and description of operations</li>
-          <li>Indicative revenue figures for the prior three financial years</li>
-          <li>EBITDA range and capital being sought</li>
-          <li>Strategic intent and key growth milestones</li>
-        </ul>
-        <p>We do not collect identity documents, banking details, passwords, or any sensitive personal information at the application stage.</p>
-      </div>
-
-      <!-- 2 -->
-      <div class="privacy-block" id="how-we-use">
-        <h2><span class="block-num">2</span> How We Use Your Information</h2>
-        <p>The information you submit is used exclusively to:</p>
-        <ul>
-          <li>Assess your eligibility for EWC membership</li>
-          <li>Contact you to discuss your application or arrange a Discovery Call</li>
-          <li>Maintain an internal record of your application for our review team</li>
+          <li>Full name, email address, telephone number, and business title</li>
+          <li>Business name, sector, revenue, and operational information provided in the application form</li>
+          <li>Financial information provided voluntarily in the context of the membership assessment process</li>
+          <li>Device and usage information collected automatically through standard web analytics (e.g., IP address, browser type, pages visited)</li>
         </ul>
         <div class="highlight-box">
           <span class="icon">🔒</span>
-          <p>Your information is <strong>never used for marketing purposes</strong>, sold to third parties, or shared outside of the EWC review team without your explicit consent.</p>
+          <p>EWC does not collect sensitive personal information (as defined under POPIA) unless you explicitly provide it in the context of a membership application, and only with your informed consent.</p>
         </div>
       </div>
 
-      <!-- 3 -->
+      <div class="privacy-block" id="how_we_use">
+        <h2><span class="block-num">2</span> How We Use Your Information</h2>
+        <p>Your personal information is used exclusively for the following purposes:</p>
+        <ul>
+          <li>Processing and reviewing your membership application</li>
+          <li>Communicating with you regarding your application status and next steps</li>
+          <li>Delivering advisory, mentorship, and wealth architecture services to accepted members</li>
+          <li>Maintaining records required for institutional and regulatory compliance</li>
+          <li>Improving our website and service delivery based on aggregated, anonymised usage data</li>
+        </ul>
+        <p>We do not use your personal information for unsolicited marketing, and we do not sell, rent, or otherwise commercially exploit your data to third parties.</p>
+      </div>
+
       <div class="privacy-block" id="emailjs">
-        <h2><span class="block-num">3</span> EmailJS &amp; Data Transmission</h2>
-        <p>Our membership application form uses <strong>EmailJS</strong> — a third-party email delivery service — to transmit your submitted information securely to our internal review team at <strong>info@entrepreneurwealthcreation.co.za</strong>.</p>
-        <p>When you submit the form, your data is sent via EmailJS's servers and delivered to our inbox. EmailJS processes data in accordance with their own privacy policy, which can be reviewed at <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--brown);font-weight:500;">emailjs.com/legal/privacy-policy</a>.</p>
-        <p>We do not store your application data on our own servers. The information resides in our email account and any internal records maintained by our review team.</p>
+        <h2><span class="block-num">3</span> EmailJS — Contact Form Processing</h2>
+        <p>EWC's membership application form uses <strong>EmailJS</strong>, a third-party service that facilitates the secure transmission of form submissions to our advisory team via email. When you complete and submit the application form, your information is transmitted through EmailJS's infrastructure.</p>
+        <div class="highlight-box">
+          <span class="icon">ℹ️</span>
+          <p><strong>About EmailJS:</strong> EmailJS does not store the content of your submissions on a permanent basis and is used solely as a transmission mechanism. EWC is the data controller for all information submitted through our application form. For EmailJS's own privacy practices, refer to their published privacy policy at <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener" class="privacy-text-link">emailjs.com/legal/privacy-policy</a>.</p>
+        </div>
+        <p>EWC recommends that you do not submit sensitive financial information beyond what is requested in the structured application form fields.</p>
       </div>
 
-      <!-- 4 -->
-      <div class="privacy-block" id="data-sharing">
-        <h2><span class="block-num">4</span> Data Sharing</h2>
-        <p>We do not sell, rent, or trade your personal information. Your application data is shared only in the following limited circumstances:</p>
+      <div class="privacy-block" id="data_sharing">
+        <h2><span class="block-num">4</span> Data Sharing &amp; Disclosure</h2>
+        <p>EWC does not share your personal information with third parties except in the following limited circumstances:</p>
         <ul>
-          <li><strong>Within EWC:</strong> Members of our internal review team who assess applications on a need-to-know basis</li>
-          <li><strong>EmailJS:</strong> As the technical service used to deliver your application to us (see Section 3)</li>
-          <li><strong>Legal obligation:</strong> If required by applicable South African law or a valid court order</li>
+          <li><strong>With your explicit consent:</strong> Certain membership services may involve introducing you to institutional capital partners or authorized financial service providers. This will only occur with your written consent and under applicable confidentiality agreements.</li>
+          <li><strong>Service providers:</strong> Third-party services used to operate our website and deliver services (e.g., EmailJS, hosting providers), engaged under strict data processing agreements.</li>
+          <li><strong>Legal obligations:</strong> Where required by applicable South African law, court order, or regulatory authority.</li>
         </ul>
-        <p>If your application progresses to the due diligence stage, any further information shared at that point will be governed by a formal Non-Disclosure Agreement.</p>
+        <p>EWC maintains a strict internal policy of institutional confidentiality, consistent with the standards applicable to professional advisory engagements.</p>
       </div>
 
-      <!-- 5 -->
-      <div class="privacy-block" id="data-retention">
+      <div class="privacy-block" id="data_retention">
         <h2><span class="block-num">5</span> Data Retention</h2>
-        <p>Application data is retained for a period of <strong>12 months</strong> from the date of submission. After this period, data is securely deleted from our systems unless an active membership or business relationship has been established, in which case data is retained for the duration of that relationship and for a further period as required by applicable law.</p>
-        <p>You may request deletion of your data at any time by contacting us (see Section 9).</p>
-      </div>
-
-      <!-- 6 -->
-      <div class="privacy-block" id="your-rights">
-        <h2><span class="block-num">6</span> Your Rights</h2>
-        <p>In accordance with the Protection of Personal Information Act (POPIA) of South Africa, you have the right to:</p>
+        <p>We retain your personal information for as long as is necessary for the purposes outlined in this policy, or as required by applicable law. Specifically:</p>
         <ul>
-          <li>Request access to the personal information we hold about you</li>
-          <li>Request correction of inaccurate or incomplete information</li>
-          <li>Request deletion of your personal information</li>
-          <li>Object to the processing of your information</li>
-          <li>Lodge a complaint with the Information Regulator of South Africa</li>
+          <li>Application data for unsuccessful applicants is retained for a maximum of 12 months, after which it is securely deleted.</li>
+          <li>Member data is retained for the duration of the membership relationship and for up to 5 years thereafter, in compliance with financial record-keeping requirements.</li>
+          <li>Web analytics data is retained in anonymised, aggregated form indefinitely for service improvement purposes.</li>
         </ul>
-        <p>To exercise any of these rights, please contact us using the details in Section 9.</p>
       </div>
 
-      <!-- 7 -->
+      <div class="privacy-block" id="your_rights">
+        <h2><span class="block-num">6</span> Your Rights Under POPIA</h2>
+        <p>In accordance with the Protection of Personal Information Act (POPIA), you have the following rights regarding your personal information held by EWC:</p>
+        <ul>
+          <li><strong>Right of Access:</strong> You may request confirmation of whether we hold your personal information and access a copy.</li>
+          <li><strong>Right of Correction:</strong> You may request correction of inaccurate or incomplete personal information.</li>
+          <li><strong>Right of Deletion:</strong> You may request deletion of your personal information, subject to legal retention requirements.</li>
+          <li><strong>Right to Object:</strong> You may object to the processing of your personal information in certain circumstances.</li>
+          <li><strong>Right to Complain:</strong> You have the right to lodge a complaint with the Information Regulator of South Africa.</li>
+        </ul>
+        <p>To exercise any of the above rights, please contact us at the details provided in Section 9.</p>
+      </div>
+
       <div class="privacy-block" id="security">
         <h2><span class="block-num">7</span> Security</h2>
-        <p>We take reasonable technical and organisational measures to protect your information from unauthorised access, loss, or misuse. Our website is served over HTTPS and application data is transmitted via encrypted channels through EmailJS.</p>
-        <p>However, no transmission over the internet is completely secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+        <p>EWC implements appropriate technical and organisational measures to protect your personal information against unauthorised access, loss, destruction, or disclosure. These include:</p>
+        <ul>
+          <li>HTTPS encryption across all website pages</li>
+          <li>Access controls limiting who within EWC can access personal information</li>
+          <li>Secure third-party service providers operating under data processing agreements</li>
+        </ul>
+        <p>While we take reasonable precautions, no method of internet transmission is completely secure. In the event of a data breach that materially affects your rights, EWC will notify you and the Information Regulator as required by POPIA.</p>
       </div>
 
-      <!-- 8 -->
       <div class="privacy-block" id="cookies">
-        <h2><span class="block-num">8</span> Cookies</h2>
-        <p>Our website uses minimal cookies necessary for basic site functionality. We do not use tracking cookies, advertising cookies, or any third-party analytics that collect personal information without consent.</p>
-        <p>Google Fonts are loaded from Google's CDN, which may set a cookie in accordance with Google's privacy policy. No other third-party cookies are used on this site.</p>
+        <h2><span class="block-num">8</span> Cookies &amp; Tracking</h2>
+        <p>Our website may use cookies and similar tracking technologies for the following purposes:</p>
+        <ul>
+          <li><strong>Essential cookies:</strong> Required for basic website functionality.</li>
+          <li><strong>Analytics cookies:</strong> Used to understand how visitors interact with our site in aggregate. No personally identifiable data is retained.</li>
+        </ul>
+        <p>You may disable cookies through your browser settings. Disabling essential cookies may affect website functionality.</p>
       </div>
 
-      <!-- 9 -->
       <div class="privacy-block" id="contact">
-        <h2><span class="block-num">9</span> Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy or how we handle your information, please contact our team:</p>
+        <h2><span class="block-num">9</span> Contact &amp; Updates</h2>
+        <p class="privacy-update-note">This Privacy Policy may be updated periodically to reflect changes in our practices or applicable law. Material changes will be communicated via notice on our website. Continued use of our website or services after an update constitutes acceptance of the revised policy.</p>
         <div class="contact-card">
-          <p><strong>Entrepreneur Wealth Creation (Pty) Ltd</strong></p>
+          <p><strong>Information Officer — Entrepreneur Wealth Creation</strong></p>
           <p>3rd Floor, 7 West Quay Road, Waterfront, Cape Town</p>
-          <p>Email: <a href="mailto:info@entrepreneurwealthcreation.co.za">info@entrepreneurwealthcreation.co.za</a></p>
-          <p>Phone: <a href="tel:+27211802936">+27 21 180 2936</a></p>
-          <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+          <p>Email: <a href="mailto:info@entrepreneurwealthcreation.com">info@entrepreneurwealthcreation.com</a></p>
+          <p>Tel: <a href="tel:+27211802936">+27 21 180 2936</a></p>
+          <p>Hours: Monday–Friday, 9:00 AM – 5:00 PM</p>
         </div>
-        <p style="margin-top:20px;">This policy may be updated from time to time. The date at the top of this page reflects the most recent revision. Continued use of our website after an update constitutes acceptance of the revised policy.</p>
       </div>
 
-    </div><!-- /privacy-content -->
-  </div><!-- /privacy-wrapper -->
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
+<footer class="site-footer">
   <div class="footer-container">
     <div class="footer-logo footer-col">
-      <img src="logo.png" alt="Entrepreneur Wealth Creation Logo">
-      <p>Building for South Africa's Rising Wealth Class. Economic Empowerment &amp; Generational Wealth.</p>
+      <a href="index.html" class="logo-link"><img src="assets/images/logo.webp" alt="Entrepreneur Wealth Creation Logo" class="footer-logo-img"></a>
+      <p>Building institutional wealth infrastructure for South Africa's established operators. Economic Empowerment &amp; Generational Governance.</p>
     </div>
     <div class="footer-col">
       <h3>Contact Us</h3>
@@ -314,31 +195,17 @@
       <a href="service.html">Services</a>
       <a href="programme.html">Programs</a>
       <a href="contact.html">Apply</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
     </div>
     <div class="footer-col">
       <h3>Follow Us</h3>
-      <a href="#">Instagram</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Email</a>
+      <a href="https://www.linkedin.com/company/112069007/admin/dashboard/">LinkedIn</a>
     </div>
   </div>
   <div class="footer-bottom">
-    Site by <a href="https://fergusonmedia.co.za" target="_blank">Ferguson Media</a>.
+    Site by <a href="https://fergusonmedia.co.za" target="_blank" rel="noopener noreferrer">Ferguson Media</a>.
   </div>
 </footer>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const sidebar   = document.getElementById('sidebar');
-  const overlay   = document.getElementById('sidebarOverlay');
-  const closeBtn  = document.getElementById('sidebarClose');
-  const openSidebar  = () => { sidebar.classList.add('open'); overlay.classList.add('active'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; };
-  const closeSidebar = () => { sidebar.classList.remove('open'); overlay.classList.remove('active'); hamburger.classList.remove('open'); document.body.style.overflow = ''; };
-  hamburger.addEventListener('click', () => sidebar.classList.contains('open') ? closeSidebar() : openSidebar());
-  closeBtn.addEventListener('click', closeSidebar);
-  overlay.addEventListener('click', closeSidebar);
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeSidebar(); });
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
